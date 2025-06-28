@@ -5,14 +5,15 @@ package hw3;
 
 public class hw3_Q1 {
 	public static void main(String[] args) {
-		
+
+		int i;
+
 		ScannerObject SO = new ScannerObject();
-		
+
 		System.out.println("請輸入：");
-		SO.KeyIn();
-		
-		
-		
+		i = SO.KeyIn();
+
+		System.out.println("out:" + i);
 	}
 
 }

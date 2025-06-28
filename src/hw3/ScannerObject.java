@@ -4,22 +4,19 @@ import java.util.Scanner;
 
 public class ScannerObject {
 
-		int i;
-		double d;
-		Scanner sc = new Scanner(System.in);
-		
-		public void KeyIn() {
-			do {
-				if (sc.hasNextInt()) {
-					i = sc.nextInt();
-					System.out.println(i);
-				}
-				if (sc.hasNextDouble()) {
-					d = sc.nextDouble();
-					System.out.println(d);
-				}
-			} while (i >= 0 && d >= 0);
-		}
+	int i;
 
+	Scanner sc = new Scanner(System.in);
+
+	public int KeyIn() {
+		if (sc.hasNextInt()) {
+			i = sc.nextInt();
+		} else {
+			System.out.println("輸入錯誤，請輸入整數。");
+		}
+			
+
+		return i;
 	}
 
+}
