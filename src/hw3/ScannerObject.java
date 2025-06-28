@@ -9,13 +9,18 @@ public class ScannerObject {
 	Scanner sc = new Scanner(System.in);
 
 	public int KeyIn() {
-		if (sc.hasNextInt()) {
-			i = sc.nextInt();
-		} else {
-			System.out.println("輸入錯誤，請輸入整數。");
-		}
+		do {
+			if (sc.hasNextInt()) {
+				i = sc.nextInt();
+				sc.nextLine();
+				break;
+			} else {
+				System.out.println("輸入錯誤，請輸入整數。");   
+				sc.nextLine();
+			}
+		}while(true);
+		
 			
-
 		return i;
 	}
 

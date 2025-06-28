@@ -6,14 +6,18 @@ package hw3;
 public class hw3_Q1 {
 	public static void main(String[] args) {
 
-		int i;
-
+		int[] input = new int[3];
+		int output = 0;
 		ScannerObject SO = new ScannerObject();
 
-		System.out.println("請輸入：");
-		i = SO.KeyIn();
+		System.out.println("請輸入3個數字：");
 
-		System.out.println("out:" + i);
+		for (int i = 0; i < input.length; i++) {
+			input[i] = SO.KeyIn();
+			System.out.println("out:" + input[i]);
+		}
+
+		
 	}
 
 }
