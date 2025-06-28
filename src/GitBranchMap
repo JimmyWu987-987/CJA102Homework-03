@@ -1,13 +1,20 @@
 
 #This is git branch map.
 
-* dccd373 (HEAD -> hw3) Update GitBranchMap
-* fe9c5cf Finished hw3_Q1<ver.1>
-* bab759f Update hw3_Q3 and add pythThm methood
-* 1983cf2 Update hw3_Q1
-* 2f06c18 Update ScannerObject.java
-* 887973c Updated ScannerObject.java
-* d34d12d hw3 frist commit and build ScannerObject.java
+*   1318aaf (HEAD -> master) Update GitbranchMap
+|\  
+| * b938f52 (hw3) Update GitBranchMap
+| * dccd373 Update GitBranchMap
+| * fe9c5cf Finished hw3_Q1<ver.1>
+| * bab759f Update hw3_Q3 and add pythThm methood
+| * 1983cf2 Update hw3_Q1
+| * 2f06c18 Update ScannerObject.java
+| * 887973c Updated ScannerObject.java
+| * d34d12d hw3 frist commit and build ScannerObject.java
+* | 43a557d (origin/master) Reset and reword .gitignore file
+* | 5b9126e Edit GitBranchMap.txt
+* | 607a4c7 Add branch <hw3>
+|/  
 *   4411235 Merge branch 'GitTest'
 |\  
 | * 71f2bc1 (GitTest) Add 3st line.
@@ -20,10 +27,4 @@
 * | ae5b633 ClassWork frist commit.
 * | 821b59a Update file content.
 * | d0d9d14 File renamed to <GitBranchMap>
-* | 27cce5b Build GitBanchMap.txt
-|/  
-* 9f8a295 add Test 2 line
-* 0a7942e frist commit. HelloGithub
-* fe19059 Frist commit
->>>>>>> hw3
 		
