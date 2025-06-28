@@ -15,12 +15,12 @@ public class ScannerObject {
 				sc.nextLine();
 				break;
 			} else {
-				System.out.println("輸入錯誤，請輸入整數。");   
+				System.out.println("輸入錯誤，請輸入整數。");
 				sc.nextLine();
+				// 清除nextInt()的資料並且清除可能的換行符號
 			}
-		}while(true);
-		
-			
+		} while (true);
+
 		return i;
 	}
 
