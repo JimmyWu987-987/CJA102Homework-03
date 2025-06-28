@@ -21,10 +21,12 @@ public class hw3_Q1 {
 		Arrays.sort(input);
 
 		if ((input[0] + input[1]) > input[2]) { // 最小兩邊和 > 最長邊 為三角形
-			if ((input[0] == input[1])&&(input[0] == input[2])) {
+			if ((input[0] == input[1]) && (input[0] == input[2])) {
 				System.out.println("正三角形");
-			} else if(input[0] == input[1]){
-					System.out.println("等腰三角形");
+			} else if (input[0] == input[1]) {
+				System.out.println("等腰三角形");
+			} else if (pythThm(input[0], input[1], input[2])) {
+				System.out.println("直角三角形");
 			} else {
 				System.out.println("其他三角形");
 			}
@@ -34,14 +36,14 @@ public class hw3_Q1 {
 		}
 
 	}
-	public boolean pythThm(int a,int b,int c) { //c為最長邊
-		int add,sum;
+
+	public static boolean pythThm(int a, int b, int c) { 
+		// c為最長邊
+		// 利用畢氏定理判斷是否為直角三角形
 		
-		add = (a*a)+(b*b);
-		
-		if(sum==add) {
+		if ((c * c) == ((a * a) + (b * b))) {
 			return true;
-		}else {
+		} else {
 			return false;
 		}
 	}
