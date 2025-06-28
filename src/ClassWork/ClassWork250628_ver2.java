@@ -35,20 +35,20 @@ public class ClassWork250628_ver2 {
 	}
 
 	public int[][] getRandomArray(int num1, int num2) {
-		int[][] array = new int[num1][num2];
+		int[][] date = new int[num1][num2];
 
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array[i].length; j++) {
-				array[i][j] = (int) (Math.random() * 31);
+		for (int i = 0; i < date.length; i++) {
+			for (int j = 0; j < date[i].length; j++) {
+				date[i][j] = (int) (Math.random() * 31);
 			}
 		}
-		return array;
+		return date;
 	}
 
-	public void printArray(int[][] array) {
-		for (int i = 0; i < array.length; i++) {
-			for (int j = 0; j < array[i].length; j++) {
-				System.out.print(array[i][j] + "\t");
+	public void printArray(int[][] date) {
+		for (int i = 0; i < date.length; i++) {
+			for (int j = 0; j < date[i].length; j++) {
+				System.out.print(date[i][j] + "\t");
 			}
 			System.out.println();
 		}
