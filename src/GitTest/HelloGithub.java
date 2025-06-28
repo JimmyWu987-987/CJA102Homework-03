@@ -6,5 +6,7 @@ public class HelloGithub {
 		
 		System.out.println("Hello!Github!");
 		System.out.println("Test 2 line");
+		
+		System.out.println("frist commit GitTest");
 	}
 }
