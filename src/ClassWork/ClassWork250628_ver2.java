@@ -13,7 +13,7 @@ public class ClassWork250628_ver2 {
 //	public static int TwoDimArraycount(int num1, int num2) {
 //	}
 //	
-	public static int[][] RandomTwoDimArray(int num1, int num2) {
+	public int[][] getRandomArray(int num1, int num2) {
 		int array[][] = new int[num1][num2];
 		int i, j;
 
@@ -22,11 +22,19 @@ public class ClassWork250628_ver2 {
 				array[i][j]=(int)(Math.random()*31);
 			}
 		}
-
+		
 		return array;
 	}
 
 	public static void main(String[] args) {
-	
+//		int x[][] = new int[3][3];
+//		int y[][] = new int[3][3];
+//		int z[][] = new int[3][3];
+		
+		getRandomArray x = new getRandomArray();
+
+		System.out.println("======X Array=====");
+		
+		}
 	}
-}
+
