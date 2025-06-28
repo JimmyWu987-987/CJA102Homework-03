@@ -10,31 +10,48 @@ package ClassWork;
 
 public class ClassWork250628_ver2 {
 
-//	public static int TwoDimArraycount(int num1, int num2) {
-//	}
-//	
-	public int[][] getRandomArray(int num1, int num2) {
-		int array[][] = new int[num1][num2];
-		int i, j;
+	public static void main(String[] args) {
 
-		for (i = 0; i < num1; i++) {
-			for (j = 0; j < num2; j++) {
-				array[i][j]=(int)(Math.random()*31);
+		ClassWork250628_ver2 obj1 = new ClassWork250628_ver2();
+		int[][] x = obj1.getRandomArray(3, 3);
+		int[][] y = obj1.getRandomArray(3, 3);
+		int[][] z = new int[3][3];
+
+		System.out.println("======X Array=====");
+		obj1.printArray(x);
+		System.out.println("======Y Array=====");
+		obj1.printArray(y);
+		
+		System.out.println("======Z Array=====");
+
+		for (int i = 0; i < z.length; i++) {
+			for (int j = 0; j < z[i].length; j++) {
+				z[i][j] = x[i][j] + y[i][j];
+				System.out.print(z[i][j] + "\t");
+			}
+			System.out.println();
+		}
+
+	}
+
+	public int[][] getRandomArray(int num1, int num2) {
+		int[][] array = new int[num1][num2];
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				array[i][j] = (int) (Math.random() * 31);
 			}
 		}
-		
 		return array;
 	}
 
-	public static void main(String[] args) {
-//		int x[][] = new int[3][3];
-//		int y[][] = new int[3][3];
-//		int z[][] = new int[3][3];
-		
-		getRandomArray x = new getRandomArray();
-
-		System.out.println("======X Array=====");
-		
+	public void printArray(int[][] array) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				System.out.print(array[i][j] + "\t");
+			}
+			System.out.println();
 		}
-	}
 
+	}
+}
