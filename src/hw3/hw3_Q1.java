@@ -21,10 +21,10 @@ public class hw3_Q1 {
 		Arrays.sort(input);
 
 		if ((input[0] + input[1]) > input[2]) { // 最小兩邊和 > 最長邊 為三角形
-			if ((input[0] == input[1]) && (input[0] == input[2])) {
-				System.out.println("正三角形");
-			} else if (input[0] == input[1]) {
+			if (input[0] == input[1]) {
 				System.out.println("等腰三角形");
+			} else if (input[0] == input[2]) {
+				System.out.println("正三角形");
 			} else if (pythThm(input[0], input[1], input[2])) {
 				System.out.println("直角三角形");
 			} else {
