@@ -11,7 +11,7 @@ public class hw3_Q1 {
 
 		int[] input = new int[3];
 
-		System.out.println("請輸入3個數字,輸入完後請按Enter：");
+		System.out.println("請輸入3個數字（以空白分隔）,輸入完後請按Enter：");
 
 		input = scannerCount(input.length);// 將鍵盤輸入的資料儲存至input陣列
 		Arrays.sort(input); // 先做由小至大的排序,這樣保證input[2]就是最長邊
