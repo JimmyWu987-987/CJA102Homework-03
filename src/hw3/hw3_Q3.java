@@ -5,5 +5,8 @@ package hw3;
 //的號碼與總數，如圖：
 
 public class hw3_Q3 {
+	public static void main(String[] args) {
+		
+	}
 
 }
