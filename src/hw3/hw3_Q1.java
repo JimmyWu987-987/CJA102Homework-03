@@ -18,6 +18,7 @@ public class hw3_Q1 {
 			input[i] = SO.KeyIn();
 //			output += input[i];
 		}
+		//先做由小至大的排序,這樣保證input[2]就是最長邊
 		Arrays.sort(input);
 
 		if ((input[0] + input[1]) > input[2]) { // 最小兩邊和 > 最長邊 為三角形
