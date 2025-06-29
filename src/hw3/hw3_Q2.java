@@ -8,13 +8,16 @@ public class hw3_Q2 {
 
 		int answerNumber;
 
-		answerNumber = setRandomNum(9);
+		answerNumber = setRandomNum(9);// 將產生的亂數儲存至answerNumber
 
 		System.out.println("數字猜猜看！請輸入0~9任意數字！");
-		countinuousScan(answerNumber);		
+		countinuousScan(answerNumber);// answerNumber傳給此方法做猜數字
 
 	}
 
+	/*
+	 * 將產生的解答數字與鍵盤輸入的值，一起做判斷的方法，猜對與猜錯都會有相對應的文字輸出。
+	 */
 	public static void countinuousScan(int ansNum) {
 		ScannerObject SO = new ScannerObject();
 		int date;
