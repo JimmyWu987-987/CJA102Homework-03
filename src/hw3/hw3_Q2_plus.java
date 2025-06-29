@@ -1,16 +1,17 @@
 package hw3;
 
-//請設計一隻程式，會亂數產生一個0～9的數字，然後可以玩猜數字遊戲，猜錯會顯示錯誤訊息，猜
-//對則顯示正確訊息，如圖示結果：
-
-public class hw3_Q2 {
+/*
+玩猜數字遊戲，猜錯會顯示錯誤訊息，猜對則顯示正確訊息
+(進階功能：產生0～100亂數，每次猜就會提示你是大於還是小於正確答案)
+*/
+public class hw3_Q2_plus {
 	public static void main(String[] args) {
 
 		int answerNumber;
 
-		answerNumber = setRandomNum(9);// 將0~9產生的亂數儲存至answerNumber
+		answerNumber = setRandomNum(100);// 將0~100產生的亂數儲存至answerNumber
 
-		System.out.println("數字猜猜看！請輸入0~9任意數字！");
+		System.out.println("數字猜猜看！請輸入0~100任意數字！");
 		countinuousScan(answerNumber);// answerNumber傳給此方法做猜數字
 
 	}
@@ -23,11 +24,15 @@ public class hw3_Q2 {
 		int date;
 		do {
 			date = SO.KeyIn();
+
 			if (date == ansNum) {
 				System.out.println("恭喜你猜對了!");
 				break;
+
+			} else if (date > ansNum) {
+				System.out.println("猜錯囉！溫馨提醒你猜的比較大！");
 			} else {
-				System.out.println("猜錯囉!");
+				System.out.println("猜錯囉！溫馨提醒你猜的比較小！");
 			}
 
 		} while (true);
