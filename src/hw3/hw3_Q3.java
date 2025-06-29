@@ -5,5 +5,27 @@ package hw3;
 //的號碼與總數，如圖：
 
 public class hw3_Q3 {
+	public static void main(String[] args) {
 
+		int inputNumber;
+		ScannerObject SO = new ScannerObject();
+		System.out.println("阿文你討厭哪個數字？");
+		inputNumber = SO.KeyIn();
+		bangGoNumberchoose(inputNumber);
+
+	}
+
+	public static void bangGoNumberchoose(int hateNumber) {
+
+		int count = 0;
+//		int[][] NumberTable = new int[][6];
+
+		for (int i = 1; i <= 49; i++) {
+			if (!(i % 10 == hateNumber || i / 10 == hateNumber)) {
+				System.out.print(i + " ");
+				count++;
+			}
+		}
+		System.out.println("總共有 " + count + " 個數字可以選。");
+	}
 }
