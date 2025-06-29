@@ -9,17 +9,25 @@ public class ScannerObject {
 
 	/*
 	 * 利用無窮迴圈持續判斷鍵盤是否有輸入為整數，有輸入非整數會清除重來
+	 * 只能輸入正整數
 	 */
 	public int KeyIn() {
+		
 		do {
 			if (sc.hasNextInt()) {
 				i = sc.nextInt();
-//				sc.nextLine();
-				break;
+				if (i <= 0) {
+					System.out.println("只能是正整數，請重新輸入。");
+					sc.nextLine();
+					continue;
+				} else {
+					break;
+				}
+
 			} else {
 				System.out.println("輸入錯誤，請輸入整數。");
-//				sc.nextLine(); // 清除nextInt()的資料並且清除可能的換行符號
-
+				sc.nextLine();
+				continue;
 			}
 		} while (true);
 
@@ -44,7 +52,8 @@ public class ScannerObject {
 
 			} else {
 				System.out.println("輸入錯誤，請輸入整數。");
-
+				sc.nextLine();
+				continue;
 			}
 		} while (true);
 
