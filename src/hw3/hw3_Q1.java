@@ -20,7 +20,9 @@ public class hw3_Q1 {
 	}
 
 	/*
+	 * KeyIn()詳見ScannerObject.java
 	 * 設定輸入次數的方法，可以設定輸入count次就停止。 停止後將資料return一組陣列。
+	 * 
 	 */
 
 	public static int[] scannerCount(int count) {

@@ -16,6 +16,7 @@ public class hw3_Q2 {
 	}
 
 	/*
+	 * KeyIn()詳見ScannerObject.java
 	 * 將產生的解答數字與鍵盤輸入的值，一起做判斷的方法，猜對與猜錯都會有相對應的文字輸出。
 	 */
 	public static void countinuousScan(int ansNum) {

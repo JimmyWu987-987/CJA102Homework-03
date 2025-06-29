@@ -8,7 +8,7 @@ public class hw3_Q3 {
 	public static void main(String[] args) {
 
 		int inputNumber;
-//		詳見ScannerObject.java
+//		keyInUnitsDigit()詳見ScannerObject.java
 		ScannerObject SO = new ScannerObject();
 		System.out.println("阿文你討厭哪個數字？");
 		inputNumber = SO.keyInUnitsDigit();
