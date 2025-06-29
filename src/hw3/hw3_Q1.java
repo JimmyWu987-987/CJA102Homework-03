@@ -10,17 +10,28 @@ public class hw3_Q1 {
 	public static void main(String[] args) {
 
 		int[] input = new int[3];
-		ScannerObject SO = new ScannerObject();
 
 		System.out.println("請輸入3個數字,輸入完後請按Enter：");
 
-		for (int i = 0; i < input.length; i++) {
-			input[i] = SO.KeyIn();
-		}
-
+		input = scannerCount(input.length);// 將鍵盤輸入的資料儲存至input陣列
 		Arrays.sort(input); // 先做由小至大的排序,這樣保證input[2]就是最長邊
 		triangleJudge(input[0], input[1], input[2]); // 判斷三角形的方法
 
+	}
+
+	/*
+	 * 設定輸入次數的方法，可以設定輸入count次就停止。 停止後將資料return一組陣列。
+	 */
+
+	public static int[] scannerCount(int count) {
+		int[] date = new int[count];
+		ScannerObject SO = new ScannerObject();
+
+		for (int i = 0; i < count; i++) {
+			date[i] = SO.KeyIn();
+
+		}
+		return date;
 	}
 
 	/*
