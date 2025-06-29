@@ -11,18 +11,31 @@ public class hw3_Q2 {
 		answerNumber = setRandomNum(9);
 
 		System.out.println("數字猜猜看！請輸入0~9任意數字！");
-//		do {
-//			input = SO.KeyIn();
-//		}while(true);
+		countinuousScan(answerNumber);		
 
 	}
-//	public static int countinuousScan(){}
+
+	public static void countinuousScan(int ansNum) {
+		ScannerObject SO = new ScannerObject();
+		int date;
+		do {
+			date = SO.KeyIn();
+			if (date == ansNum) {
+				System.out.println("恭喜你猜對了!");
+				break;
+			} else {
+				System.out.println("猜錯囉!");
+			}
+
+		} while (true);
+
+	}
+
 	/*
 	 * 亂數產生0~(rangeNumber)的數字，並回傳。
 	 */
 	public static int setRandomNum(int rangeNumber) {
 		int num;
-		ScannerObject SO = new ScannerObject();
 		num = (int) ((Math.random() * (rangeNumber + 1)));
 
 		return num;
