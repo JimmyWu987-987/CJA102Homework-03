@@ -18,9 +18,12 @@ public class hw3_Q3 {
 	}
 
 	/*
-	 * 可以設定1~(randomNumber)的之間範圍數值，並將整數存放置最大索引值為(randomNumber)的陣列裡。
-	 * 不喜歡的數字(hateNumber)能夠判斷個位數（用%）以及十位數（用/）是否有(hateNumber)的存在。
-	 * 使用無窮迴圈是為了製作出可以彈性選擇的數值範圍與討厭的數字。例如可以選範圍1~100
+	 * 1.可以設定1~(randomNumber)的之間範圍數值，並將整數存放置最大索引值為(randomNumber)的陣列裡。
+	 * 2.不喜歡的數字(hateNumber)能夠判斷個位數（用%）以及十位數（用/）是否有(hateNumber)的存在。
+	 * 3.使用無窮迴圈是為了製作出可以彈性選擇的數值範圍與討厭的數字。例如可以選範圍1~100
+	 * 4.『count』計算(randomNumber)最大範圍，例如最大值為49，計算到當count=49,則跳出迴圈並回傳陣列。
+	 * 5.『i』則是計算要存入陣列的索引值，確保能夠連續儲存至陣列。
+	 * 6.此方法也能排序陣列，存放最大數值(randomNumber)之後的陣列，陣列內的數值皆為『0』
 	 */
 	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
 
@@ -42,7 +45,14 @@ public class hw3_Q3 {
 	}
 
 	/*
-	 * 依照作業要求的排序方式 count1計算可以選的數字數量 count2計算
+	 * 1.依照作業要求的排序方式 
+	 * 2.count1計算可以選擇的數字數量 
+	 * 3.count2為設定6個數字之後換行
+	 * 
+	 * 4.使用無窮迴圈是來判斷陣列值是否為0
+	 * 因為bangGoNumberchoose排序過的關係，存放最大數值(49)之後的陣列，陣列內的數值皆為『0』
+	 * 
+	 * 5.呈(4)，藉由(umArrays[count1] == 0），印出最後的print並跳出無窮回權。
 	 */
 	public static void numberTable(int[] numArrays) {
 
