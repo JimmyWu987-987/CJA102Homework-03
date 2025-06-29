@@ -9,7 +9,7 @@ public class hw3_Q3 {
 
 		int inputNumber;
 		ScannerObject SO = new ScannerObject();
-
+		System.out.println("阿文你討厭哪個數字？");
 		inputNumber = SO.KeyIn();
 		bangGoNumberchoose(inputNumber);
 
@@ -18,7 +18,7 @@ public class hw3_Q3 {
 	public static void bangGoNumberchoose(int hateNumber) {
 
 		int count = 0;
-		int NumberTable;
+//		int[][] NumberTable = new int[][6];
 
 		for (int i = 1; i <= 49; i++) {
 			if (!(i % 10 == hateNumber || i / 10 == hateNumber)) {
