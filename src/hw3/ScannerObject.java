@@ -26,13 +26,17 @@ public class ScannerObject {
 		return i;
 	}
 
+	/*
+	 * 利用無窮迴圈持續判斷鍵盤是否有輸入為整數，有輸入非整數會清除重來 
+	 * 只能輸入1~9的個位數
+	 */
 	public int keyInUnitsDigit() {
 
 		do {
 			if (sc.hasNextInt()) {
 				i = sc.nextInt();
-				if (i > 9) {
-					System.out.println("只能輸入個位數字，請重新輸入。");
+				if ((i > 9) || (i <= 0)) {
+					System.out.println("只能輸入個位數字1~9，請重新輸入。");
 					continue;
 				} else {
 					break;
