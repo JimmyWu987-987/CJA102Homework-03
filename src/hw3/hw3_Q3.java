@@ -8,13 +8,20 @@ public class hw3_Q3 {
 	public static void main(String[] args) {
 
 		int inputNumber;
+//		詳見ScannerObject.java
 		ScannerObject SO = new ScannerObject();
 		System.out.println("阿文你討厭哪個數字？");
-		inputNumber = SO.KeyIn();
+		inputNumber = SO.keyInUnitsDigit();
+		
 		numberTable(bangGoNumberchoose(inputNumber, 49));
 
 	}
 
+	/*
+	 * 可以設定1~(randomNumber)的之間範圍數值，並將整數存放置最大索引值為(randomNumber)的陣列裡。
+	 * 不喜歡的數字(hateNumber)能夠判斷個位數（用%）以及十位數（用/）是否有(hateNumber)的存在。
+	 * 使用無窮迴圈是為了製作出可以彈性選擇的數值範圍與討厭的數字。例如可以選範圍1~100
+	 */
 	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
 
 		int count = 1, i = 0;
@@ -34,6 +41,9 @@ public class hw3_Q3 {
 
 	}
 
+	/*
+	 * 依照作業要求的排序方式 count1計算可以選的數字數量 count2計算
+	 */
 	public static void numberTable(int[] numArrays) {
 
 		int count1 = 0, count2 = 0;
@@ -49,17 +59,10 @@ public class hw3_Q3 {
 				count2 = 0;
 			}
 			if (numArrays[count1] == 0) {
-				System.out.println("總共有 " + (count1) + " 個數字可選。");
+				System.out.println("總共有 " + count1 + " 個數字可選。");
 				break;
 			}
 
 		}
-
-//		for (int i = 0; i < numArrays.length; i++) {
-//			for (int j = 0; j < 6; j++) {
-//				System.out.println(numArrays[j]);
-//			}
-//			System.out.println();
-//		}
 	}
 }
