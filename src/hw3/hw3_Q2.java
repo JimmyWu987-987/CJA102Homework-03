@@ -6,14 +6,25 @@ package hw3;
 public class hw3_Q2 {
 	public static void main(String[] args) {
 
-		int input, output = 0;
-		ScannerObject SO = new ScannerObject();
-		output = (int) ((Math.random() * 9) + 1);
+		int answerNumber;
+
+		answerNumber = setRandomNum(9);
 
 		System.out.println("數字猜猜看！請輸入0~9任意數字！");
-		do {
-			input = SO.KeyIn();
-		}while(true);
-		
+//		do {
+//			input = SO.KeyIn();
+//		}while(true);
+
+	}
+//	public static int countinuousScan(){}
+	/*
+	 * 亂數產生0~(rangeNumber)的數字，並回傳。
+	 */
+	public static int setRandomNum(int rangeNumber) {
+		int num;
+		ScannerObject SO = new ScannerObject();
+		num = (int) ((Math.random() * (rangeNumber + 1)));
+
+		return num;
 	}
 }
