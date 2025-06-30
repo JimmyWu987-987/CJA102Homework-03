@@ -27,6 +27,7 @@ public class ScannerObject {
 			} else {
 				System.out.println("輸入錯誤，請輸入整數。");
 				sc.nextLine();
+
 				continue;
 			}
 		} while (true);
@@ -38,7 +39,7 @@ public class ScannerObject {
 	 * 利用無窮迴圈持續判斷鍵盤是否有輸入為整數，有輸入非整數會清除重來 
 	 * 只能輸入1~9的個位數
 	 */
-	public int keyInUnitsDigit() {
+	public int keyInUnitsDigit19() {
 
 		do {
 			if (sc.hasNextInt()) {
@@ -57,7 +58,29 @@ public class ScannerObject {
 			}
 		} while (true);
 		
-		sc.close();
+		return i;
+	}
+	
+	public int keyInUnitsDigit09() {
+
+		do {
+			if (sc.hasNextInt()) {
+				i = sc.nextInt();
+				if ((i > 9) || (i < 0)) {
+					System.out.println("只能輸入個位數字0~9，請重新輸入。");
+					continue;
+				} else {
+					break;
+				}
+
+			} else {
+				System.out.println("輸入錯誤，請輸入整數。");
+				sc.nextLine();
+
+				continue;
+			}
+		} while (true);
+		
 		return i;
 	}
 

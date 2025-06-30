@@ -40,12 +40,20 @@ public class hw3_Q2_plus {
 	}
 
 	/*
-	 * 亂數產生0~(rangeNumber)的數字，並回傳。
+	 * setRandomNum 方法
+	 * 
+	 * 用Math.random 方法，產生出一個指定範圍的整數，並回傳此整數。
+	 * 
+	 * @param rangeNumber 要亂數的數字範圍，範圍為 0 ~ (rangeNumber)
+	 * @return 要猜中的數字 
 	 */
 	public static int setRandomNum(int rangeNumber) {
-		int num;
+		
+		int num;	// 要猜中的數字
+		
+		// 亂數產生一個範圍為 0 ~ (rangeNumber)的數字
 		num = (int) ((Math.random() * (rangeNumber + 1)));
 
-		return num;
+		return num;	// 回傳要猜中的數字
 	}
 }
