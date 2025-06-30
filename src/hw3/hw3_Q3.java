@@ -3,6 +3,7 @@ package hw3;
 //阿文很喜歡簽大樂透(1～49)，但他是個善變的人，上次討厭數字是4，但這次他想要依心情決定討
 //厭哪個數字，請您設計一隻程式，讓阿文可以輸入他不想要的數字(1～9)，畫面會顯示他可以選擇
 //的號碼與總數，如圖：
+import java.util.Arrays;
 
 public class hw3_Q3 {
 	public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class hw3_Q3 {
 		ScannerObject SO = new ScannerObject();
 		System.out.println("阿文你討厭哪個數字？");
 		inputNumber = SO.keyInUnitsDigit();
-		
+
 		numberTable(bangGoNumberchoose(inputNumber, 49));
 
 	}
@@ -24,6 +25,7 @@ public class hw3_Q3 {
 	 * 4.『count』計算(randomNumber)最大範圍，例如最大值為49，計算到當count=49,則跳出迴圈並回傳陣列。
 	 * 5.『i』則是計算要存入陣列的索引值，確保能夠連續儲存至陣列。
 	 * 6.此方法也能排序陣列，存放最大數值(randomNumber)之後的陣列，陣列內的數值皆為『0』
+	 * 7.預留一個numArrays[i+1]的值，內容為「０」，給numberTable()做作業指定的排序
 	 */
 	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
 
@@ -39,6 +41,7 @@ public class hw3_Q3 {
 
 			count++;
 		}
+		numArrays = Arrays.copyOf(numArrays, i+1);
 
 		return numArrays;
 
@@ -48,10 +51,7 @@ public class hw3_Q3 {
 	 * 1.依照作業要求的排序方式 
 	 * 2.count1計算可以選擇的數字數量 
 	 * 3.count2為設定6個數字之後換行
-	 * 
-	 * 4.使用無窮迴圈是來判斷陣列值是否為0
-	 * 因為bangGoNumberchoose排序過的關係，存放最大數值(49)之後的陣列，陣列內的數值皆為『0』
-	 * 
+	 * 4.因為bangGoNumberchoose排序過的關係，numArrays[最大索引+1]的值，內容為「0」
 	 * 5.呈(4)，藉由(umArrays[count1] == 0），印出最後的print並跳出無窮回權。
 	 */
 	public static void numberTable(int[] numArrays) {
