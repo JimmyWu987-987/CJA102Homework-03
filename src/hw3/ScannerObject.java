@@ -56,7 +56,8 @@ public class ScannerObject {
 				continue;
 			}
 		} while (true);
-
+		
+		sc.close();
 		return i;
 	}
 

@@ -1,78 +1,133 @@
 package hw3;
 
-//阿文很喜歡簽大樂透(1～49)，但他是個善變的人，上次討厭數字是4，但這次他想要依心情決定討
-//厭哪個數字，請您設計一隻程式，讓阿文可以輸入他不想要的數字(1～9)，畫面會顯示他可以選擇
-//的號碼與總數，如圖：
+// 阿文很喜歡簽大樂透(1～49)，但他她是個善變的人，上次討厭數字是4，但這次他想要依心情決定討
+// 厭哪個數字，請您設計一隻程式，讓阿文可以輸入他不想要的數字(1～9)，畫面會顯示他可以選擇
+// 的號碼與總數，如圖：
+
+import java.util.Arrays; // 引入 Arrays 類別，用於陣列操作，例如 copyOf
 
 public class hw3_Q3 {
+
+	/*
+	 * main 方法是程式的進入點。
+	 * 負責取得使用者輸入的不喜歡數字，呼叫核心邏輯方法，並最終顯示可選號碼的總數。
+	 *
+	 * 執行流程：
+	 * 1. 宣告用於儲存不喜歡數字 (inputNumber) 和可選總數 (count) 的變數。
+	 * 2. 建立 ScannerObject 實例，用於處理使用者輸入。
+	 * 3. 提示使用者輸入不想要的個位數字 (1~9)。
+	 * 4. 呼叫 ScannerObject 的 keyInUnitsDigit() 方法取得輸入，並儲存到 inputNumber。
+	 * 5. 呼叫 bangGoNumberchoose() 方法，傳入 inputNumber (不喜歡的數字) 和 49 (最大範圍)。
+	 * 此方法會回傳一個包含阿文可選數字的陣列。
+	 * 6. 將 bangGoNumberchoose() 回傳的陣列傳入 numberTable() 方法，進行印出及計數。
+	 * 7. numberTable() 方法會印出所有可選號碼，並回傳這些號碼的總數。
+	 * 8. 最後，將總數印出在畫面上。
+	 */
 	public static void main(String[] args) {
 
-		int inputNumber;
-//		keyInUnitsDigit()詳見ScannerObject.java
-		ScannerObject SO = new ScannerObject();
-		System.out.println("阿文你討厭哪個數字？");
-		inputNumber = SO.keyInUnitsDigit();
-		
-		numberTable(bangGoNumberchoose(inputNumber, 49));
+		int inputNumber, count; // 宣告儲存使用者輸入不喜歡數字及可選號碼總數的變數
 
+		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
+		System.out.println("阿文你討厭哪個數字？");
+		inputNumber = SO.keyInUnitsDigit(); // 取得使用者輸入的不喜歡數字
+	    System.out.println("以下是阿文可以選的數字：");
+		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
+		// 然後將該陣列傳入 numberTable 進行顯示與計數。
+		count = numberTable(bangGoNumberchoose(inputNumber, 49));
+
+		System.out.println("總共有 " + count + " 個數字可選。"); // 印出最終可選號碼的總數
 	}
 
 	/*
-	 * 1.可以設定1~(randomNumber)的之間範圍數值，並將整數存放置最大索引值為(randomNumber)的陣列裡。
-	 * 2.不喜歡的數字(hateNumber)能夠判斷個位數（用%）以及十位數（用/）是否有(hateNumber)的存在。
-	 * 3.使用無窮迴圈是為了製作出可以彈性選擇的數值範圍與討厭的數字。例如可以選範圍1~100
-	 * 4.『count』計算(randomNumber)最大範圍，例如最大值為49，計算到當count=49,則跳出迴圈並回傳陣列。
-	 * 5.『i』則是計算要存入陣列的索引值，確保能夠連續儲存至陣列。
-	 * 6.此方法也能排序陣列，存放最大數值(randomNumber)之後的陣列，陣列內的數值皆為『0』
+	 * bangGoNumberchoose 方法：根據不喜歡的數字和指定範圍，產生可選的大樂透號碼陣列。
+	 *
+	 * 這個方法會從 1 開始，檢查到 randomNumber 之間的所有數字。
+	 * 它會排除那些個位數或十位數包含指定 hateNumber 的數字。
+	 *
+	 * @param hateNumber 使用者輸入的不喜歡數字 (1 ~ 9)。
+	 * @param randomNumber 指定的數字範圍上限 (例如：49)。
+	 * @return 一個包含所有符合條件 (不含 hateNumber) 的數字的整數陣列。
+	 * 陣列的實際長度會精確到最後一個有效數字的索引 + 1，並以 '0' 作為終止標記。
 	 */
 	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
 
-		int count = 1, i = 0;
+		int validCount = 0; // 用於計算有效數字在 numArrays 中的索引，也表示目前已找到的有效數字數量
+		int currentNum = 1; // 從 1 開始檢查的當前數字
+
+		// 初始化一個與最大範圍相同大小的陣列。
+		// 這個陣列可能比實際需要的長，因為有些數字會被過濾掉。
 		int[] numArrays = new int[randomNumber];
 
+		// 使用無限迴圈來遍歷數字，直到達到指定的最大範圍。
+		// 這種方式可以靈活處理不同的 randomNumber 範圍。
 		while (true) {
-			if (count > randomNumber) {
-				break;
-			} else if (!(count % 10 == hateNumber || count / 10 == hateNumber)) {
-				numArrays[i++] = count;
+			// 判斷是否已檢查完所有指定範圍內的數字
+			if (currentNum > randomNumber) {
+				break; // 超過範圍，跳出迴圈
 			}
 
-			count++;
+			// 使用模運算符 (%) 判斷個位數，使用整數除法 (/) 判斷十位數。
+			// 如果當前數字的個位數或十位數是 hateNumber，則跳過這個數字。
+			if (!(currentNum % 10 == hateNumber || currentNum / 10 == hateNumber)) {
+				// 如果數字符合條件（不包含 hateNumber），則將其存入陣列。
+				// validCount 會作為索引，存入後自動遞增，確保連續儲存。
+				numArrays[validCount++] = currentNum;
+			}
+
+			currentNum++; // 檢查下一個數字
 		}
 
-		return numArrays;
+		// 使用 Arrays.copyOf 重新調整陣列的大小。
+		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
+		// 並額外預留一個位置 (validCount)，這個位置的內容會是 Java 預設值 '0'，
+		// 作為後續 numberTable() 方法的終止標記，方便其判斷陣列的有效內容結束。
+		numArrays = Arrays.copyOf(numArrays, validCount + 1);
 
+		return numArrays; // 回傳包含符合條件數字的陣列
 	}
 
 	/*
-	 * 1.依照作業要求的排序方式 
-	 * 2.count1計算可以選擇的數字數量 
-	 * 3.count2為設定6個數字之後換行
-	 * 
-	 * 4.使用無窮迴圈是來判斷陣列值是否為0
-	 * 因為bangGoNumberchoose排序過的關係，存放最大數值(49)之後的陣列，陣列內的數值皆為『0』
-	 * 
-	 * 5.呈(4)，藉由(umArrays[count1] == 0），印出最後的print並跳出無窮回權。
+	 * numberTable 方法：印出可選的樂透號碼，並計算其總數。
+	 *
+	 * 這個方法會接收一個來自 bangGoNumberchoose() 的陣列，
+	 * 依照每行 6 個數字的格式印出，並計算有效數字的總數量。
+	 *
+	 * @param numArrays 包含阿文可選數字的陣列，末尾有一個 '0' 作為結束標記。
+	 * @return 可選數字的總數。
 	 */
-	public static void numberTable(int[] numArrays) {
+	public static int numberTable(int[] numArrays) {
 
-		int count1 = 0, count2 = 0;
+		int actualCount = 0; // 實際可選數字的總計數量
+		int lineCount = 0;   // 用於控制每行印出的數字數量，達到 6 個就換行
 
+		// 使用無限迴圈來遍歷陣列，直到遇到 '0' 作為陣列內容的結束標記。
+		// 這種方式依賴於 bangGoNumberchoose 方法預留的 '0' 終止符。
 		while (true) {
+			// 印出當前索引的數字，並用定位點符號 (\t) 保持間距。
+			System.out.print(numArrays[actualCount] + "\t");
 
-			System.out.print(numArrays[count1] + "\t");
-			count1++;
-			count2++;
+			actualCount++; // 每次印出一個數字，總數就遞增
+			lineCount++;   // 每次印出一個數字，行計數也遞增
 
-			if (count2 == 6) {
-				System.out.println();
-				count2 = 0;
-			}
-			if (numArrays[count1] == 0) {
-				System.out.println("總共有 " + count1 + " 個數字可選。");
-				break;
+			// 檢查是否已印出 6 個數字，如果是，就換行。
+			if (lineCount == 6) {
+				System.out.println(); // 換行
+				lineCount = 0;        // 重置行計數器
 			}
 
+			// 檢查下一個數字是否為 '0'。
+			// 如果是 '0'，表示已達到 bangGoNumberchoose 預留的結束標記，
+			// 代表所有有效數字都已印出，可以跳出迴圈。
+			if (numArrays[actualCount] == 0) {
+				break; // 跳出迴圈
+			}
 		}
+		// 額外處理：如果最後一行不滿 6 個，但迴圈結束了，也需要確保有一個換行。
+		// 這樣可以避免後續的「總共有 xx 個數字可選。」緊跟在最後一個數字後面。
+		if (lineCount != 0) { // 如果最後一行有印數字，但沒有滿6個導致沒換行
+			System.out.println(); // 則補一個換行
+		}
+		
+		return actualCount; // 回傳實際計算出的可選數字總數
 	}
 }
