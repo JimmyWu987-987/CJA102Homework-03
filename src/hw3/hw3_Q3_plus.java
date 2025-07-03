@@ -7,7 +7,7 @@ package hw3;
 
 import java.util.Arrays; // 引入 Arrays 類別，用於陣列操作，例如 copyOf
 
-public class hw3_Q3 {
+public class hw3_Q3_plus {
 
 	/*
 	 * main 方法是程式的進入點。
