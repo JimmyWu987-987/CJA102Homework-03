@@ -14,14 +14,14 @@ public class hw3_Q3 {
 	 * 負責取得使用者輸入的不喜歡數字，呼叫核心邏輯方法，並最終顯示可選號碼的總數。
 	 *
 	 * 執行流程：
-	 * 1. 宣告用於儲存不喜歡數字 (inputNumber) 和可選總數 (count) 的變數。
+	 * 1. 宣告用於儲存不喜歡數字 (inputNumber) 和輸入的最大選號範圍 (NUMBER_RANGE) 的變數。
 	 * 2. 建立 ScannerObject 實例，用於處理使用者輸入。
 	 * 3. 提示使用者輸入不想要的個位數字 (1~9)。
 	 * 4. 呼叫 ScannerObject 的 keyInUnitsDigit() 方法取得輸入，並儲存到 inputNumber。
-	 * 5. 呼叫 bangGoNumberchoose() 方法，傳入 inputNumber (不喜歡的數字) 和 49 (最大範圍)。
+	 * 5. 呼叫 bangGoNumberchoose() 方法，傳入 inputNumber (不喜歡的數字) 和 NUMBER_RANGE (最大範圍)。
 	 * 此方法會回傳一個包含阿文可選數字的陣列。
-	 * 6. 將 bangGoNumberchoose() 回傳的陣列傳入 numberTable() 方法，進行印出及計數。
-	 * 7. numberTable() 方法會印出所有可選號碼，並回傳這些號碼的總數。
+	 * 6. 將 bangGoNumberchoose() 回傳的陣列傳入 printNumberTable() 方法，進行印出及計數。
+	 * 7. printNumberTable() 方法會印出所有可選號碼，並回傳這些號碼的總數。
 	 * 8. 最後，將總數印出在畫面上。
 	 */
 	public static void main(String[] args) {
@@ -34,7 +34,7 @@ public class hw3_Q3 {
 		inputNumber = SO.keyInUnitsDigit19(); // 取得使用者輸入的不喜歡數字
 	    System.out.println("以下是阿文可以選的數字：");
 		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
-		// 然後將該陣列傳入 numberTable 進行顯示與計數。
+		// 然後將該陣列傳入 printNumberTable 進行印出。
 		printNumberTable(bangGoNumberchoose(inputNumber, NUMBER_RANGE));
 	}
 
@@ -47,7 +47,6 @@ public class hw3_Q3 {
 	 * @param hateNumber 使用者輸入的不喜歡數字 (1 ~ 9)。
 	 * @param randomNumber 指定的數字範圍上限 (例如：49)。
 	 * @return 一個包含所有符合條件 (不含 hateNumber) 的數字的整數陣列。
-	 * 陣列的實際長度會精確到最後一個有效數字的索引 + 1，並以 '0' 作為終止標記。
 	 */
 	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
 
@@ -85,7 +84,7 @@ public class hw3_Q3 {
 	}
 
 	/*
-	 * numberTable 方法：印出可選的樂透號碼，並計算其總數。
+	 * printNumberTable 方法：印出可選的樂透號碼，並計算其總數。
 	 *
 	 * 這個方法會接收一個來自 bangGoNumberchoose() 的陣列，
 	 * 依照每行 6 個數字的格式印出，並計算有效數字的總數量。

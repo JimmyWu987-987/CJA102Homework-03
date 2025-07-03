@@ -12,12 +12,21 @@ public class hw3_Q3_plus {
 	/*
 	 * main 方法是程式的進入點。 負責取得使用者輸入的不喜歡數字，呼叫核心邏輯方法，並最終顯示可選號碼的總數。
 	 *
-	 * 執行流程： 1. 宣告用於儲存不喜歡數字 (inputNumber) 和可選總數 (count) 的變數。 2. 建立 ScannerObject
-	 * 實例，用於處理使用者輸入。 3. 提示使用者輸入不想要的個位數字 (1~9)。 4. 呼叫 ScannerObject 的
-	 * keyInUnitsDigit() 方法取得輸入，並儲存到 inputNumber。 5. 呼叫 bangGoNumberchoose() 方法，傳入
-	 * inputNumber (不喜歡的數字) 和 49 (最大範圍)。 此方法會回傳一個包含阿文可選數字的陣列。 6. 將
-	 * bangGoNumberchoose() 回傳的陣列傳入 numberTable() 方法，進行印出及計數。 7. numberTable()
-	 * 方法會印出所有可選號碼，並回傳這些號碼的總數。 8. 最後，將總數印出在畫面上。
+	 * 執行流程： 
+	 * 1. 宣告用於儲存不喜歡數字 (inputNumber) 和輸入的最大選號範圍（NUMBER_RANGE）的變數。 
+	 * 
+	 * 2. 建立 ScannerObject實例，用於處理使用者輸入。 
+	 * 
+	 * 3. 提示使用者輸入不想要的個位數字 (1~9)。 
+	 * 
+	 * 4. 呼叫 ScannerObject 的keyInUnitsDigit() 方法取得輸入，並儲存到 inputNumber。 
+	 * 
+	 * 5. 呼叫 bangGoSixNumberChoose() 方法，傳入inputNumber (不喜歡的數字) 和 NUMBER_RANGE (最大範圍)。 
+	 * 此方法會回傳一個包含阿文可選數字的陣列。 
+	 * 
+	 * 6. 將bangGoSixNumberChoose() 回傳的陣列傳入 printNumber() 方法 
+	 * 
+	 * 7. printNumber()方法會印出6組可選號碼，最後，將總數印出在畫面上。
 	 */
 	public static void main(String[] args) {
 
@@ -34,26 +43,25 @@ public class hw3_Q3_plus {
 		// 然後將該陣列傳入 printNumberTable 進行顯示。
 		printNumber(bangGoSixNumberChoose(inputNumber, NUMBER_RANGE));
 
-//		System.out.println("總共有 " + totalCount + " 個數字可選。"); // 印出最終可選號碼的總數
 	}
 
 	/*
 	 * bangGoSixNumberChoose 方法：根據不喜歡的數字和指定範圍，產生可選的大樂透號碼陣列。
 	 *
-	 * Step 1. 這個方法會從 1 開始，檢查到 randomNumber 之間的所有數字。 它會排除那些個位數或十位數包含指定 hateNumber
-	 * 的數字。
-	 *
-	 * Step 2. 做完（1）後，隨機取 6 組數字，列印輸出。
+	 * 這個方法會從 1 開始，檢查到 randomNumber 之間的所有數字。 
+	 * 它會排除那些個位數或十位數包含指定 hateNumber
+	 * 其中會在使用 choseSixNumber 方法，隨機篩選6個已排除掉不喜歡數字的號碼
+	 * 最後，回傳篩選出的6組號碼（已排序完）
+	 * 
 	 *
 	 * @param hateNumber 使用者輸入的不喜歡數字 (1 ~ 9)。
 	 * 
 	 * @param randomNumber 指定的數字範圍上限 (例如：49)。
 	 * 
-	 * @return
+	 * @return 回傳篩選出的6組號碼（已排序完）
 	 */
 	public static int[] bangGoSixNumberChoose(int hateNumber, int randomNumber) {
 
-//		Step 1 :
 		int validCount = 0; // 計算陣列的索引值，用於計算有效數字在 numArrays 中的索引，也表示目前已找到的有效數字數量
 		int currentNum = 1; // 輸入當前的數字存入陣列，從 1 開始檢查的當前數字
 
@@ -74,6 +82,7 @@ public class hw3_Q3_plus {
 			if (!(currentNum % 10 == hateNumber || currentNum / 10 == hateNumber)) {
 				// 如果數字符合條件（不包含 hateNumber），則將其存入陣列。
 				// validCount 會作為索引，存入後自動遞增，確保連續儲存。
+				// 這邊的numArrays[]陣列為存放已排除不喜歡的數字組合（未整理，有多餘的陣列空間）
 				numArrays[validCount++] = currentNum;
 			}
 
@@ -82,12 +91,28 @@ public class hw3_Q3_plus {
 
 		// 使用 Arrays.copyOf 重新調整陣列的大小。
 		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
+		// 等號左邊的numArrays[]陣列為存放已排除不喜歡的數字組合（已整理，刪除多餘的陣列空間）
 		numArrays = Arrays.copyOf(numArrays, validCount);
+		
+		// 呼叫 choseSixNumber 取得排除不喜歡數字的6組隨機號碼
+		// 等號左邊的numArrays[]陣列為隨機挑選出的6組號碼
+		numArrays = choseSixNumber(numArrays);
+		
+		
 		return numArrays; // 回傳挑選完後的陣列
 	}
 
-//	根據不喜歡的數字和指定範圍，產生可選的大樂透號碼陣列。
-//	2123d
+	/*
+	 * choseSixNumber 方法：隨機篩選出6個陣列內的值
+	 *
+	 * 此方法是給 bangGoSixNumberChoose 使用的方法。
+	 * 目的在於將 bangGoSixNumberChoose 內所篩選出已排除不喜歡的數字組合，做隨機篩選出6組號碼
+	 * 最後，將陣列排序數字由小排到大，並回傳篩選出的6組號碼。
+	 *
+	 * @param numArrays 已排除不喜歡的數字組合
+	 * 
+	 * @return 回傳篩選出的6組號碼
+	 */
 	
 	public static int[] choseSixNumber(int[] numArrays) {
 		
