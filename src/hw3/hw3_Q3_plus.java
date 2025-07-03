@@ -83,16 +83,22 @@ public class hw3_Q3_plus {
 		// 使用 Arrays.copyOf 重新調整陣列的大小。
 		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
 		numArrays = Arrays.copyOf(numArrays, validCount);
+		return numArrays; // 回傳挑選完後的陣列
+	}
 
-//		Step 2 :
+//	根據不喜歡的數字和指定範圍，產生可選的大樂透號碼陣列。
+//	2123d
+	
+	public static int[] choseSixNumber(int[] numArrays) {
+		
 		int randowIndexNum = 0; // 作為存放一個『亂數索引值』。
 		int tempCount; // 計數器作為為計算輸出6個數字
 		int[] tempArray = new int[6]; // 暫存陣列，將隨機挑出的陣列資料儲存至此暫存陣列
-
+		
 		
 		// 做一個亂數索印值，變成陣列[亂數索印]，選六個不重複的數值並排序，最後印出。
 		for (tempCount = 0; tempCount < tempArray.length; tempCount++) {
-			randowIndexNum = (int) (Math.random() * validCount);
+			randowIndexNum = (int) (Math.random() * numArrays.length);
 			
 			if (numArrays[randowIndexNum] == 0) {
 				tempCount--;
@@ -104,12 +110,12 @@ public class hw3_Q3_plus {
 			}
 		}
 		// 使用 Arrays.copyOf 重新調整陣列的大小。
-		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
+		// 將陣列長度裁剪到實際儲存的有效數字數量 (tempCount)。
 		numArrays = Arrays.copyOf(tempArray, tempCount);
-
+		
 		// 排序此陣列
 		Arrays.sort(numArrays);
-
+		
 		return numArrays; // 回傳隨機6個數值的陣列
 	}
 

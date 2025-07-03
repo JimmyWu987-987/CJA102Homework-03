@@ -27,7 +27,7 @@ public class hw3_Q3 {
 	public static void main(String[] args) {
 
 		final int NUMBER_RANGE = 49;
-		int inputNumber, totalCount; // 宣告儲存使用者輸入不喜歡數字及可選號碼總數的變數
+		int inputNumber; // 宣告儲存使用者輸入不喜歡數字及可選號碼總數的變數
 
 		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
 		System.out.println("阿文你討厭哪個數字？");
@@ -35,9 +35,7 @@ public class hw3_Q3 {
 	    System.out.println("以下是阿文可以選的數字：");
 		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
 		// 然後將該陣列傳入 numberTable 進行顯示與計數。
-		totalCount = numberTable(bangGoNumberchoose(inputNumber, NUMBER_RANGE));
-
-		System.out.println("總共有 " + totalCount + " 個數字可選。"); // 印出最終可選號碼的總數
+		printNumberTable(bangGoNumberchoose(inputNumber, NUMBER_RANGE));
 	}
 
 	/*
@@ -81,9 +79,7 @@ public class hw3_Q3 {
 
 		// 使用 Arrays.copyOf 重新調整陣列的大小。
 		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
-		// 並額外預留一個位置 (validCount)，這個位置的內容會是 Java 預設值 '0'，
-		// 作為後續 numberTable() 方法的終止標記，方便其判斷陣列的有效內容結束。
-		numArrays = Arrays.copyOf(numArrays, validCount + 1);
+		numArrays = Arrays.copyOf(numArrays, validCount);
 
 		return numArrays; // 回傳包含符合條件數字的陣列
 	}
@@ -97,13 +93,13 @@ public class hw3_Q3 {
 	 * @param numArrays 包含阿文可選數字的陣列，末尾有一個 '0' 作為結束標記。
 	 * @return 可選數字的總數。
 	 */
-	public static int numberTable(int[] numArrays) {
+	public static void printNumberTable(int[] numArrays) {
 
 		int actualCount = 0; // 實際可選數字的總計數量
 		int lineCount = 0;   // 用於控制每行印出的數字數量，達到 6 個就換行
 
-		// 使用無限迴圈來遍歷陣列，直到遇到 '0' 作為陣列內容的結束標記。
-		// 這種方式依賴於 bangGoNumberchoose 方法預留的 '0' 終止符。
+		// 計算算到陣列長度作為陣列內容的結束標記。
+		
 		while (true) {
 			// 印出當前索引的數字，並用定位點符號 (\t) 保持間距。
 			System.out.print(numArrays[actualCount] + "\t");
@@ -117,10 +113,8 @@ public class hw3_Q3 {
 				lineCount = 0;        // 重置行計數器
 			}
 
-			// 檢查下一個數字是否為 '0'。
-			// 如果是 '0'，表示已達到 bangGoNumberchoose 預留的結束標記，
-			// 代表所有有效數字都已印出，可以跳出迴圈。
-			if (numArrays[actualCount] == 0) {
+			// 判斷actualCount是否算到陣列長度
+			if (actualCount == numArrays.length) {
 				break; // 跳出迴圈
 			}
 		}
@@ -129,7 +123,6 @@ public class hw3_Q3 {
 		if (lineCount != 0) { // 如果最後一行有印數字，但沒有滿6個導致沒換行
 			System.out.println(); // 則補一個換行
 		}
-		
-		return actualCount; // 回傳實際計算出的可選數字總數
+		System.out.println("總共有 " + numArrays.length + " 個數字可選。"); // 印出最終可選號碼的總數
 	}
 }
