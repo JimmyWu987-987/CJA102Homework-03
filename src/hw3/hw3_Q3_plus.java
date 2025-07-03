@@ -141,7 +141,7 @@ public class hw3_Q3_plus {
 		// 排序此陣列
 		Arrays.sort(numArrays);
 		
-		return numArrays; // 回傳隨機6個數值的陣列
+		return numArrays; // 回傳隨機6個數值的陣列。
 	}
 
 	/*
