@@ -26,6 +26,7 @@ public class hw3_Q3 {
 	 */
 	public static void main(String[] args) {
 
+		final int NUMBER_RANGE = 49;
 		int inputNumber, totalCount; // 宣告儲存使用者輸入不喜歡數字及可選號碼總數的變數
 
 		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
@@ -34,7 +35,7 @@ public class hw3_Q3 {
 	    System.out.println("以下是阿文可以選的數字：");
 		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
 		// 然後將該陣列傳入 numberTable 進行顯示與計數。
-		totalCount = numberTable(bangGoNumberchoose(inputNumber, 49));
+		totalCount = numberTable(bangGoNumberchoose(inputNumber, NUMBER_RANGE));
 
 		System.out.println("總共有 " + totalCount + " 個數字可選。"); // 印出最終可選號碼的總數
 	}

@@ -26,21 +26,26 @@ public class hw3_Q3_plus {
 	 */
 	public static void main(String[] args) {
 
+		
+		final int NUMBER_RANGE = 49; 		// 宣告取亂數的範圍為，ＥＸ：1~49
 		int inputNumber, totalCount; // 宣告儲存使用者輸入不喜歡數字及可選號碼總數的變數
+		
 
 		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
 		System.out.println("阿文你討厭哪個數字？");
 		inputNumber = SO.keyInUnitsDigit19(); // 取得使用者輸入的不喜歡數字
 	    System.out.println("以下是阿文可以選的數字：");
-		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
-		// 然後將該陣列傳入 numberTable 進行顯示與計數。
-		totalCount = numberTable(bangGoNumberchoose(inputNumber, 49));
+	    
+		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列。
+	    // 回傳值直接導入 printNumberTable
+		// 然後將該陣列傳入 printNumberTable 進行顯示。
+		printNumberTable(bangGoSixNumberChoose(inputNumber, NUMBER_RANGE));
 
-		System.out.println("總共有 " + totalCount + " 個數字可選。"); // 印出最終可選號碼的總數
+//		System.out.println("總共有 " + totalCount + " 個數字可選。"); // 印出最終可選號碼的總數
 	}
 
 	/*
-	 * bangGoNumberchoose 方法：根據不喜歡的數字和指定範圍，產生可選的大樂透號碼陣列。
+	 * bangGoSixNumberChoose 方法：根據不喜歡的數字和指定範圍，產生可選的大樂透號碼陣列。
 	 *
 	 * 這個方法會從 1 開始，檢查到 randomNumber 之間的所有數字。
 	 * 它會排除那些個位數或十位數包含指定 hateNumber 的數字。
@@ -49,8 +54,8 @@ public class hw3_Q3_plus {
 	 * @param randomNumber 指定的數字範圍上限 (例如：49)。
 	 * @return 一個包含所有符合條件 (不含 hateNumber) 的數字的整數陣列。
 	 * 陣列的實際長度會精確到最後一個有效數字的索引 + 1，並以 '0' 作為終止標記。
-	 */
-	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
+	 */ 
+	public static int[] bangGoSixNumberChoose(int hateNumber, int randomNumber) {
 
 		int validCount = 0; // 計算陣列的索引值，用於計算有效數字在 numArrays 中的索引，也表示目前已找到的有效數字數量
 		int currentNum = 1; // 輸入當前的數字存入陣列，從 1 開始檢查的當前數字
@@ -83,6 +88,17 @@ public class hw3_Q3_plus {
 		// 並額外預留一個位置 (validCount)，這個位置的內容會是 Java 預設值 '0'，
 		// 作為後續 numberTable() 方法的終止標記，方便其判斷陣列的有效內容結束。
 		numArrays = Arrays.copyOf(numArrays, validCount + 1);
+		
+		// 歸零索引值，給接下來的亂數索引取陣列值做準備。
+		validCount = 1;
+		
+		
+		// 做一個亂數索印值，變成陣列[亂數索印]，選六個不重複的數值並排序，最後印出。
+		do {
+			
+		}while(validCount <= 6);
+		
+		
 
 		return numArrays; // 回傳包含符合條件數字的陣列
 	}
@@ -96,7 +112,7 @@ public class hw3_Q3_plus {
 	 * @param numArrays 包含阿文可選數字的陣列，末尾有一個 '0' 作為結束標記。
 	 * @return 可選數字的總數。
 	 */
-	public static int numberTable(int[] numArrays) {
+	public static int printNumberTable(int[] numArrays) {
 
 		int actualCount = 0; // 實際可選數字的總計數量
 		int lineCount = 0;   // 用於控制每行印出的數字數量，達到 6 個就換行
