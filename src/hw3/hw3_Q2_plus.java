@@ -7,9 +7,10 @@ package hw3;
 public class hw3_Q2_plus {
 	public static void main(String[] args) {
 
+		final int NUMBER_RANGE = 100;	// 宣告數字範圍為0到NUMBER_RANGE, EX:0~100
 		int answerNumber;
 
-		answerNumber = setRandomNum(100);// 將0~100產生的亂數儲存至answerNumber
+		answerNumber = setRandomNum(NUMBER_RANGE);// 將0~100產生的亂數儲存至answerNumber
 
 		System.out.println("數字猜猜看！請輸入0~100任意數字！");
 		countinuousScan(answerNumber);// answerNumber傳給此方法做猜數字

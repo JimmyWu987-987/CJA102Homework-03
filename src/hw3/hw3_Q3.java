@@ -3,6 +3,7 @@ package hw3;
 // 阿文很喜歡簽大樂透(1～49)，但他她是個善變的人，上次討厭數字是4，但這次他想要依心情決定討
 // 厭哪個數字，請您設計一隻程式，讓阿文可以輸入他不想要的數字(1～9)，畫面會顯示他可以選擇
 // 的號碼與總數，如圖：
+// (進階挑戰：輸入不要的數字後，直接亂數印出6個號碼且不得重複)
 
 import java.util.Arrays; // 引入 Arrays 類別，用於陣列操作，例如 copyOf
 
@@ -25,6 +26,7 @@ public class hw3_Q3 {
 	 */
 	public static void main(String[] args) {
 
+		final int NUMBER_RANGE = 49;
 		int inputNumber, totalCount; // 宣告儲存使用者輸入不喜歡數字及可選號碼總數的變數
 
 		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
@@ -33,7 +35,7 @@ public class hw3_Q3 {
 	    System.out.println("以下是阿文可以選的數字：");
 		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
 		// 然後將該陣列傳入 numberTable 進行顯示與計數。
-		totalCount = numberTable(bangGoNumberchoose(inputNumber, 49));
+		totalCount = numberTable(bangGoNumberchoose(inputNumber, NUMBER_RANGE));
 
 		System.out.println("總共有 " + totalCount + " 個數字可選。"); // 印出最終可選號碼的總數
 	}
@@ -51,8 +53,8 @@ public class hw3_Q3 {
 	 */
 	public static int[] bangGoNumberchoose(int hateNumber, int randomNumber) {
 
-		int validCount = 0; // 用於計算有效數字在 numArrays 中的索引，也表示目前已找到的有效數字數量
-		int currentNum = 1; // 從 1 開始檢查的當前數字
+		int validCount = 0; // 計算陣列的索引值，用於計算有效數字在 numArrays 中的索引，也表示目前已找到的有效數字數量
+		int currentNum = 1; // 輸入當前的數字存入陣列，從 1 開始檢查的當前數字
 
 		// 初始化一個與最大範圍相同大小的陣列。
 		// 這個陣列可能比實際需要的長，因為有些數字會被過濾掉。
