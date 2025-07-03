@@ -82,38 +82,27 @@ public class hw3_Q3_plus {
 
 		// 使用 Arrays.copyOf 重新調整陣列的大小。
 		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
-		numArrays = Arrays.copyOf(numArrays, validCount + 1);
+		numArrays = Arrays.copyOf(numArrays, validCount);
 
-//		Step 2 :	
+//		Step 2 :
 		int randowIndexNum = 0; // 作為存放一個『亂數索引值』。
-		int tempCount = 0; // 計數器作為為計算輸出6個數字
+		int tempCount; // 計數器作為為計算輸出6個數字
 		int[] tempArray = new int[6]; // 暫存陣列，將隨機挑出的陣列資料儲存至此暫存陣列
 
-//		for (int i = 0; i < tempArray.length; i++) {
-//			randowIndexNum = (int) (Math.random() * validCount);
-//			if (numArrays[randowIndexNum] == 0) {
-//				continue;
-//			} else {
-//				tempArray[tempCount] = numArrays[randowIndexNum];
-//				// 表示此陣列數值已取出。
-//				numArrays[randowIndexNum] = 0;
-//			}
-//		}
-
+		
 		// 做一個亂數索印值，變成陣列[亂數索印]，選六個不重複的數值並排序，最後印出。
-		do {
+		for (tempCount = 0; tempCount < tempArray.length; tempCount++) {
 			randowIndexNum = (int) (Math.random() * validCount);
-			// 判斷numArrays[某個整數] == 0，是的話為已取過值
+			
 			if (numArrays[randowIndexNum] == 0) {
+				tempCount--;
 				continue;
 			} else {
 				tempArray[tempCount] = numArrays[randowIndexNum];
 				// 表示此陣列數值已取出。
 				numArrays[randowIndexNum] = 0;
-				tempCount++;
 			}
-		} while (tempCount < 6);
-
+		}
 		// 使用 Arrays.copyOf 重新調整陣列的大小。
 		// 將陣列長度裁剪到實際儲存的有效數字數量 (validCount)。
 		numArrays = Arrays.copyOf(tempArray, tempCount);
