@@ -28,13 +28,16 @@ public class hw3_Q3_plus {
 	 * 
 	 * 7. printNumber()方法會印出6組可選號碼，最後，將總數印出在畫面上。
 	 */
+	
+	public static final int NUMBER_RANGE = 49; // 宣告取亂數的範圍為，ＥＸ：1~49
+	static {
+		System.out.println("阿文你討厭哪個數字？");		
+	}
 	public static void main(String[] args) {
 
-		final int NUMBER_RANGE = 49; // 宣告取亂數的範圍為，ＥＸ：1~49
 		int inputNumber; // 宣告儲存使用者輸入不喜歡數字
 
 		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
-		System.out.println("阿文你討厭哪個數字？");
 		inputNumber = SO.setkeyInUnitsDigit19(); // 取得使用者輸入的不喜歡數字
 		System.out.println("以下是阿文可以選的6組數字：");
 
