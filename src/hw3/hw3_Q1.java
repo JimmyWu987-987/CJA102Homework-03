@@ -13,9 +13,9 @@ public class hw3_Q1 {
 
 		System.out.println("請輸入3個數字（以空白分隔）,輸入完後請按Enter：");
 
-		input = scannerCount(input.length);// 將鍵盤輸入的資料儲存至input陣列
+		input = getScannerCount(input.length);// 將鍵盤輸入的資料儲存至input陣列
 		Arrays.sort(input); // 先做由小至大的排序,這樣保證input[2]就是最長邊
-		triangleJudge(input[0], input[1], input[2]); // 判斷三角形的方法
+		getTriangleJudge(input[0], input[1], input[2]); // 判斷三角形的方法
 
 	}
 
@@ -25,7 +25,7 @@ public class hw3_Q1 {
 	 * 
 	 */
 
-	public static int[] scannerCount(int count) {
+	public static int[] getScannerCount(int count) {
 		int[] date = new int[count];
 		ScannerObject SO = new ScannerObject();
 
@@ -39,14 +39,14 @@ public class hw3_Q1 {
 	/*
 	 * a, b 為短邊 c 為最長邊。最小兩邊和 > 最長邊為三角形。此方法為判斷三角形的方法
 	 */
-	public static void triangleJudge(int a, int b, int c) {
+	public static void getTriangleJudge(int a, int b, int c) {
 
 		if ((a + b) > c) {
 			if (a == b) {
 				System.out.println("等腰三角形");
 			} else if (a == c) {
 				System.out.println("正三角形");
-			} else if (pythThm(a, b, c)) {
+			} else if (setPythThm(a, b, c)) {
 				System.out.println("直角三角形");
 			} else {
 				System.out.println("其他三角形");
@@ -59,7 +59,7 @@ public class hw3_Q1 {
 	/*
 	 * 畢氏定理的方法，判斷是否為直角三角形，a, b 為短邊 c 為最長邊。
 	 */
-	public static boolean pythThm(int a, int b, int c) {
+	public static boolean setPythThm(int a, int b, int c) {
 
 		if ((c * c) == ((a * a) + (b * b))) {
 			return true;
