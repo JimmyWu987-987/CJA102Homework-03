@@ -4,19 +4,19 @@ import java.util.Scanner;
 
 public class ScannerObject {
 
-	int i;
-	Scanner sc = new Scanner(System.in);
+	private int input;
+	protected Scanner sc = new Scanner(System.in);
 
 	/*
 	 * 利用無窮迴圈持續判斷鍵盤是否有輸入為整數，有輸入非整數會清除重來
 	 * 只能輸入正整數
 	 */
-	public int KeyIn() {
+	public int setKeyIn() {
 		
 		do {
 			if (sc.hasNextInt()) {
-				i = sc.nextInt();
-				if (i <= 0) {
+				input = sc.nextInt();
+				if (input <= 0) {
 					System.out.println("只能是正整數，請重新輸入。");
 					sc.nextLine();
 					continue;
@@ -32,19 +32,19 @@ public class ScannerObject {
 			}
 		} while (true);
 
-		return i;
+		return input;
 	}
 
 	/*
 	 * 利用無窮迴圈持續判斷鍵盤是否有輸入為整數，有輸入非整數會清除重來 
 	 * 只能輸入1~9的個位數
 	 */
-	public int keyInUnitsDigit19() {
+	public int setkeyInUnitsDigit19() {
 
 		do {
 			if (sc.hasNextInt()) {
-				i = sc.nextInt();
-				if ((i > 9) || (i <= 0)) {
+				input = sc.nextInt();
+				if ((input > 9) || (input <= 0)) {
 					System.out.println("只能輸入個位數字1~9，請重新輸入。");
 					continue;
 				} else {
@@ -58,15 +58,20 @@ public class ScannerObject {
 			}
 		} while (true);
 		
-		return i;
+		return input;
 	}
 	
-	public int keyInUnitsDigit09() {
+	/*
+	 * 利用無窮迴圈持續判斷鍵盤是否有輸入為整數，有輸入非整數會清除重來 
+	 * 只能輸入0~9的個位數
+	 */
+	
+	public int setkeyInUnitsDigit09() {
 
 		do {
 			if (sc.hasNextInt()) {
-				i = sc.nextInt();
-				if ((i > 9) || (i < 0)) {
+				input = sc.nextInt();
+				if ((input > 9) || (input < 0)) {
 					System.out.println("只能輸入個位數字0~9，請重新輸入。");
 					continue;
 				} else {
@@ -81,7 +86,7 @@ public class ScannerObject {
 			}
 		} while (true);
 		
-		return i;
+		return input;
 	}
 
 }

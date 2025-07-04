@@ -24,7 +24,7 @@ public class hw3_Q2_plus {
 		ScannerObject SO = new ScannerObject();
 		int date;
 		do {
-			date = SO.KeyIn();
+			date = SO.setKeyIn();
 
 			if (date == ansNum) {
 				System.out.println("恭喜你猜對了!");
