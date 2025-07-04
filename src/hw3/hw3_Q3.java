@@ -31,7 +31,7 @@ public class hw3_Q3 {
 
 		ScannerObject SO = new ScannerObject(); // 建立 ScannerObject 實例，處理使用者輸入
 		System.out.println("阿文你討厭哪個數字？");
-		inputNumber = SO.keyInUnitsDigit19(); // 取得使用者輸入的不喜歡數字
+		inputNumber = SO.setkeyInUnitsDigit19(); // 取得使用者輸入的不喜歡數字
 	    System.out.println("以下是阿文可以選的數字：");
 		// 呼叫 bangGoNumberchoose 取得符合條件的數字陣列，
 		// 然後將該陣列傳入 printNumberTable 進行印出。

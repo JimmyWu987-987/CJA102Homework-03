@@ -30,7 +30,7 @@ public class hw3_Q1 {
 		ScannerObject SO = new ScannerObject();
 
 		for (int i = 0; i < count; i++) {
-			date[i] = SO.KeyIn();
+			date[i] = SO.setKeyIn();
 
 		}
 		return date;
