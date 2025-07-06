@@ -71,13 +71,13 @@ public class hw4_Q1_Methed {
 		return ArraysResults;
 	}
 
-	private void printArraysAvgAndArraysResults() {
+	public void printArraysAvgAndArraysResults() {
 
 		System.out.println("該陣列平均值：" + ArraysAvgNumber);
-		System.out.print("該陣列之元素（由小至大）：");
+		System.out.println("該陣列之元素（由小至大）：");
 
 		for (int i = 0; i < ArraysResults.length; i++) {
-			System.out.print(ArraysResults[i] + "\n");
+			System.out.print(ArraysResults[i] + "\t");
 		}
 
 	}

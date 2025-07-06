@@ -15,10 +15,8 @@ public class hw4_Q1 {
 		hw4_Q1_Methed hw4_Q1 = new hw4_Q1_Methed();
 
 		hw4_Q1.setArraysIsAvg(ARRAYS_DATE);
-
-//		System.out.print(hw4_Q1.getArraysIsAvg());
-
 		hw4_Q1.setArraysElementGreaterAvg(ARRAYS_DATE, hw4_Q1.getArraysIsAvg());
+		hw4_Q1.printArraysAvgAndArraysResults();
 
 	}
 }
