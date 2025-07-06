@@ -16,7 +16,31 @@ public class hw4_Q1_Methed {
 
 	private int ArraysAvgNumber;
 	private int[] ArraysResults;
+	
+	public hw4_Q1_Methed(int[] ArraysResults) {
+		int tempAvgNumber = 0;
 
+		for (int i = 0; i < ArraysResults.length; i++) {
+			tempAvgNumber += ArraysResults[i];
+		}
+
+		ArraysAvgNumber = tempAvgNumber / ArraysResults.length;
+		
+		Arrays.sort(ArraysResults);
+		int ArraysDateCount = 0;
+		int ArraysResultsIndex = 0;
+
+		while (ArraysDateCount < ArraysResults.length) {
+			if (ArraysResults[ArraysDateCount] > ArraysAvgNumber) {
+
+				ArraysResultsIndex = ArraysResults.length - ArraysDateCount;
+				this.ArraysResults = Arrays.copyOfRange(ArraysResults, ArraysDateCount, ArraysResults.length);
+				break;
+			}
+			ArraysDateCount++;
+		}
+	}
+	
 	/*
 	 * setArraysIsAvg 方法：計算該陣列元素之平均值
 	 * 
@@ -32,7 +56,9 @@ public class hw4_Q1_Methed {
 		}
 
 		ArraysAvgNumber = tempAvgNumber / ArraysDate.length;
-
+		
+		
+		
 	}
 
 	/*
