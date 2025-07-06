@@ -1,5 +1,7 @@
 package hw4;
 
+import java.util.Arrays;
+
 /*
  * 『此類別給 hw4_Q1.java 使用』 
  * 
@@ -29,7 +31,7 @@ public class hw4_Q1_Methed {
 			tempAvgNumber += ArraysDate[i];
 		}
 
-		ArraysAvgNumber = tempAvgNumber/ArraysDate.length;
+		ArraysAvgNumber = tempAvgNumber / ArraysDate.length;
 
 	}
 
@@ -41,14 +43,24 @@ public class hw4_Q1_Methed {
 	}
 
 	/*
-	 * setArraysElementGreaterAvg 方法：計算該陣列大於平均值之元素，並存回該陣列
+	 * setArraysElementGreaterAvg 方法：計算該陣列大於平均值之元素，並存另一個陣列
 	 */
 
 	public void setArraysElementGreaterAvg(int[] ArraysDate, int getArraysIsAvg) {
-		
-		
 
-//		ArraysResults = ?????;
+		Arrays.sort(ArraysDate);
+		int ArraysDateCount = 0;
+		int ArraysResultsIndex = 0;
+
+		while (ArraysDateCount < ArraysDate.length) {
+			if (ArraysDate[ArraysDateCount] > getArraysIsAvg) {
+
+				ArraysResultsIndex = ArraysDate.length - ArraysDateCount;
+				ArraysResults = Arrays.copyOfRange(ArraysDate, ArraysDateCount, ArraysDate.length);
+				break;
+			}
+			ArraysDateCount++;
+		}
 	}
 
 	/*
