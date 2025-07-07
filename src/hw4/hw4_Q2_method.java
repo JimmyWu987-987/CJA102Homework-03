@@ -8,11 +8,11 @@ package hw4;
  * (提示：String方法，陣列)
  */
 
-public class hw4_Q2_methood {
+public class hw4_Q2_method {
 
 	private String ReverseStrResults;
 	
-	public hw4_Q2_methood(String STR_DATE) {
+	public hw4_Q2_method(String STR_DATE) {
 		char[] temp = STR_DATE.toCharArray(); // 字串轉字元陣列
 		char[] tempResults = new char[temp.length];
 

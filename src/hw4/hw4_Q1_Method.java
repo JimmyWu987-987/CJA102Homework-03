@@ -12,12 +12,12 @@ import java.util.Arrays;
  *
 */
 
-public class hw4_Q1_Methed {
+public class hw4_Q1_Method {
 
 	private int ArraysAvgNumber;
 	private int[] ArraysResults;
 	
-	public hw4_Q1_Methed(int[] ArraysResults) {
+	public hw4_Q1_Method(int[] ArraysResults) {
 		int tempAvgNumber = 0;
 
 		for (int i = 0; i < ArraysResults.length; i++) {
