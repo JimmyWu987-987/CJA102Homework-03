@@ -24,16 +24,14 @@ public class hw4_Q1_Methed {
 			tempAvgNumber += ArraysResults[i];
 		}
 
-		ArraysAvgNumber = tempAvgNumber / ArraysResults.length;
+		this.ArraysAvgNumber = tempAvgNumber / ArraysResults.length;
 		
 		Arrays.sort(ArraysResults);
 		int ArraysDateCount = 0;
-		int ArraysResultsIndex = 0;
 
 		while (ArraysDateCount < ArraysResults.length) {
 			if (ArraysResults[ArraysDateCount] > ArraysAvgNumber) {
 
-				ArraysResultsIndex = ArraysResults.length - ArraysDateCount;
 				this.ArraysResults = Arrays.copyOfRange(ArraysResults, ArraysDateCount, ArraysResults.length);
 				break;
 			}
@@ -55,7 +53,7 @@ public class hw4_Q1_Methed {
 			tempAvgNumber += ArraysDate[i];
 		}
 
-		ArraysAvgNumber = tempAvgNumber / ArraysDate.length;
+		this.ArraysAvgNumber = tempAvgNumber / ArraysDate.length;
 		
 		
 		
@@ -76,12 +74,10 @@ public class hw4_Q1_Methed {
 
 		Arrays.sort(ArraysDate);
 		int ArraysDateCount = 0;
-		int ArraysResultsIndex = 0;
 
 		while (ArraysDateCount < ArraysDate.length) {
 			if (ArraysDate[ArraysDateCount] > getArraysIsAvg) {
 
-				ArraysResultsIndex = ArraysDate.length - ArraysDateCount;
 				ArraysResults = Arrays.copyOfRange(ArraysDate, ArraysDateCount, ArraysDate.length);
 				break;
 			}
