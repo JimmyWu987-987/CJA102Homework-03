@@ -24,7 +24,7 @@ public class hw4_Q1_Methed {
 			tempAvgNumber += ArraysResults[i];
 		}
 
-		ArraysAvgNumber = tempAvgNumber / ArraysResults.length;
+		this.ArraysAvgNumber = tempAvgNumber / ArraysResults.length;
 		
 		Arrays.sort(ArraysResults);
 		int ArraysDateCount = 0;
@@ -53,7 +53,7 @@ public class hw4_Q1_Methed {
 			tempAvgNumber += ArraysDate[i];
 		}
 
-		ArraysAvgNumber = tempAvgNumber / ArraysDate.length;
+		this.ArraysAvgNumber = tempAvgNumber / ArraysDate.length;
 		
 		
 		

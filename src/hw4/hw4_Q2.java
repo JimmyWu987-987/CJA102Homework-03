@@ -7,5 +7,16 @@ package hw4;
  */
 
 public class hw4_Q2 {
+	
+	public final static String STR_DATE = "Hello World";
+	
+	public static void main(String[] args) {
+		hw4_Q2_methood hw4_Q2 = new hw4_Q2_methood(STR_DATE);
+		
+//		hw4_Q2.setReverseString(STR_DATE);
+//		hw4_Q2.printReverseStrResults(STR_DATE);
+		
+	
+	}
 
 }
