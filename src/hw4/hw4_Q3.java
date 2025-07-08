@@ -8,10 +8,17 @@ package hw4;
 */
 public class hw4_Q3 {
 
-	private final String[] EIGHT_PLANETS = {"mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"};
+	
+	private static final String[] EIGHT_PLANETS = {"mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"};
 	
 	public static void main(String[] args) {
-
+		
+		hw4_Q3_method hw4_Q3 = new hw4_Q3_method(EIGHT_PLANETS);
+		hw4_Q3_method Apple = new hw4_Q3_method("Apple");
+		
+//		hw4_Q3.setStrArrIsNumberOfVowels(EIGHT_PLANETS);
+//		hw4_Q3.printNumberOfVowelsCount();
+		
 	}
 
 }
