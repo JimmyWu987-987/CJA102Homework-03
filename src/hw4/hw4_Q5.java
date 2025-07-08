@@ -1,5 +1,5 @@
-package hw4;
 
+package hw4;
 /*
  * 請設計由鍵盤輸入三個整數，分別代表西元yyyy年，mm月，dd日，執行後會顯示是該年的第幾天
  * 例：輸入 1984 9 8 三個號碼後，程式會顯示「輸入的日期為該年第252天」
@@ -10,5 +10,22 @@ package hw4;
 
 
 public class hw4_Q5 {
+
+	static {
+		System.out.println("計算輸入之日期為該年的第幾天。");
+	}
+
+
+	public static void main(String[] args) {
+		
+		hw4_Q5_method DayOfTheYear = new hw4_Q5_method();
+		
+		
+		DayOfTheYear.setEnteYear();
+		DayOfTheYear.setEnteMonth();
+		DayOfTheYear.setEnterDay();
+		DayOfTheYear.printDate();
+		DayOfTheYear.setDayOfTheMonthArrays();
+	}
 
 }
