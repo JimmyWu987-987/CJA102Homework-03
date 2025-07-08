@@ -8,7 +8,7 @@ package hw4;
 
 public class hw4_Q2 {
 	
-	public final static String STR_DATE = "Hello World";
+	private final static String STR_DATE = "Hello World";
 	
 	public static void main(String[] args) {
 		hw4_Q2_method hw4_Q2 = new hw4_Q2_method(STR_DATE);
