@@ -11,8 +11,13 @@ public class hw4_Q3_method {
 	
 	private int NumberOfVowels;
 	
+	// 將字串轉成字元並暫存的方法
 	
 	// 利用switch找出母音的方法
+	
+	// 使用String方法找出母音
+	
+	// 計算母音數量的方法
 	
 	// 印出共有多少個母音
 
