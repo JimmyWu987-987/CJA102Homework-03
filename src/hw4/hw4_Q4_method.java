@@ -14,7 +14,7 @@ public class hw4_Q4_method {
 //	private int[] empNo;
 
 	// 找出是哪個員工的現金大於借款金額，並回傳該員工編號 的方法
-	// int[Y][X] = int[5][5]
+	// int[Y][X] = int[2][5]
 	// Y員工編號資料，Ｘ為該員工現金資料
 	// 回傳值：員工編號
 	public void getMeMoney(int ENTER_AMOUNT, int[][] SAL_DATE) {
@@ -29,6 +29,9 @@ public class hw4_Q4_method {
 				whoCanGetMeMoney++;
 			}
 		}
-		System.out.println("共 " + whoCanGetMeMoney + " 人");
+		if (whoCanGetMeMoney > 0)
+			System.out.println("共 " + whoCanGetMeMoney + " 人");
+		else
+			System.out.println("沒有同事有這麼多錢，你是想跑路嗎？");
 	}
 }
