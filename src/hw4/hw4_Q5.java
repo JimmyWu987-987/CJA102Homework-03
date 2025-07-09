@@ -14,18 +14,30 @@ public class hw4_Q5 {
 	static {
 		System.out.println("計算輸入之日期為該年的第幾天。");
 	}
-
+	
+	
 
 	public static void main(String[] args) {
 		
-		hw4_Q5_method DayOfTheYear = new hw4_Q5_method();
+		// 輸入並顯示出輸入的日期（有大小月、閏年的判斷）
+		hw4_Q5_method1 dayOfTheYear = new hw4_Q5_method1();
+		
+		dayOfTheYear.setWhatDayOfTheYearIsThisDate();
+		dayOfTheYear.printWhatDayOfTheYearIsThisDate();
+		
+		hw4_Q5_method1 today =new hw4_Q5_method1();
+		today.setWhatDayOfTheYearIsThisDate();
+		today.printWhatDayOfTheYearIsThisDate();
+			
 		
 		
-		DayOfTheYear.setEnteYear();
-		DayOfTheYear.setEnteMonth();
-		DayOfTheYear.setEnterDay();
-		DayOfTheYear.printDate();
-		DayOfTheYear.setDayOfTheMonthArrays();
+//		DayOfTheYear.setEnteYear();
+//		DayOfTheYear.setEnteMonth();
+//		DayOfTheYear.setEnterDay();
+//		DayOfTheYear.printDate();		
+//		DayOfTheYear.setDayOfTheMonthArrays();
+		
+		
 	}
 
 }
