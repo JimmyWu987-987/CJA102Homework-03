@@ -132,7 +132,6 @@ public class hw4_Q5_method1 {
 		}
 		this.leapYear = templeapYear;
 	}
-
 	public boolean getDetermineLeapYear() {
 		return this.leapYear;
 	}
@@ -153,7 +152,6 @@ public class hw4_Q5_method1 {
 		}
 		this.MONTH = tempMONTH;
 	}
-
 	public int getEnteMonth() {
 		return this.MONTH;
 	}
@@ -206,7 +204,6 @@ public class hw4_Q5_method1 {
 			break;
 		}
 	}
-
 	public int getEnterDay() {
 		return this.DAY;
 	}
@@ -220,48 +217,6 @@ public class hw4_Q5_method1 {
 			System.out.println("此年為閏年。");
 		else
 			System.out.println("此年為平年。");
-	}
-
-	// 用陣列儲存資料，[月份]為陣列長度
-	// 運用switch判斷大小月以及２月的天數
-	// 依照輸入的月份，動態設定陣列長度
-	// 設定完陣列長度以及陣列資量，是給 setWhatDayOfTheYearIsThisDate() 做資料處理
-	// 
-	private void setNumOfDaysInEachMonth() {
-		
-		
-		int[] tempNumOfDaysInEachMonth = new int[MONTH];
-
-		for (int i = 0; i < tempNumOfDaysInEachMonth.length; i++) {
-			switch (i) {
-			case 1: // 2月判斷閏月
-				if (this.leapYear) {
-					tempNumOfDaysInEachMonth[i] = 29;
-					break;
-				} else {
-					tempNumOfDaysInEachMonth[i] = 28;
-					break;
-				}
-			case 0:
-			case 2:
-			case 4:
-			case 6:
-			case 7:
-			case 9:
-			case 11:
-				tempNumOfDaysInEachMonth[i] = 31; // 大月的話帶入31
-				break;
-			default:
-				tempNumOfDaysInEachMonth[i] = 30; // 其餘小月帶入30
-				break;
-			}
-		}
-
-		this.NumOfDaysInEachMonth = tempNumOfDaysInEachMonth;
-	}
-
-	public int[] getNumOfDaysInEachMonth() {
-		return this.NumOfDaysInEachMonth;
 	}
 
 	/*
@@ -295,11 +250,50 @@ public class hw4_Q5_method1 {
 		this.CountOfDays = tempCountOfDays;
 
 	}
-
 	public int getWhatDayOfTheYearIsThisDate() {
 		return this.CountOfDays;
 	}
-
+	// 用陣列儲存資料，[月份]為陣列長度
+	// 運用switch判斷大小月以及２月的天數
+	// 依照輸入的月份，動態設定陣列長度
+	// 設定完陣列長度以及陣列資量，是給 setWhatDayOfTheYearIsThisDate() 做資料處理
+	// 
+	private void setNumOfDaysInEachMonth() {
+		
+		
+		int[] tempNumOfDaysInEachMonth = new int[MONTH];
+		
+		for (int i = 0; i < tempNumOfDaysInEachMonth.length; i++) {
+			switch (i) {
+			case 1: // 2月判斷閏月
+				if (this.leapYear) {
+					tempNumOfDaysInEachMonth[i] = 29;
+					break;
+				} else {
+					tempNumOfDaysInEachMonth[i] = 28;
+					break;
+				}
+			case 0:
+			case 2:
+			case 4:
+			case 6:
+			case 7:
+			case 9:
+			case 11:
+				tempNumOfDaysInEachMonth[i] = 31; // 大月的話帶入31
+				break;
+			default:
+				tempNumOfDaysInEachMonth[i] = 30; // 其餘小月帶入30
+				break;
+			}
+		}
+		
+		this.NumOfDaysInEachMonth = tempNumOfDaysInEachMonth;
+	}
+	public int[] getNumOfDaysInEachMonth() {
+		return this.NumOfDaysInEachMonth;
+	}
+	
 	// 印出輸入的日期為當天第幾天
 	public void printWhatDayOfTheYearIsThisDate() {
 		System.out.println("輸入的日期為該年第 " + this.CountOfDays+" 天");
