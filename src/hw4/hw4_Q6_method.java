@@ -37,7 +37,7 @@ public class hw4_Q6_method {
 
 	public hw4_Q6_method (int[][] STUDENT_SCORES) {
 		setSelecthighestScoresStudet(STUDENT_SCORES);
-		setSelecthighestScoresStudet(STUDENT_SCORES);
+		printNumOfStudents();
 	}
 	
 	// 掃描某一次考試，做陣列排序，找出某次考試的最高分，索引值為 7 必定為最高分 的方法
