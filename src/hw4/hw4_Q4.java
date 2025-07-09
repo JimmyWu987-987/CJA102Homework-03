@@ -11,7 +11,7 @@ import hw3.ScannerObject;
 
 public class hw4_Q4 {
 
-	// int[Y][X] = int[5][5]
+	// int[Y][X] = int[2][5]
 	// Y為員工編號，Ｘ為該員工現金
 	private static int[][] SAL_DATE = { { 25, 32, 8, 19, 27 }, { 2500, 800, 500, 1000, 1200 } };
 	private static int ENTER_AMOUNT;

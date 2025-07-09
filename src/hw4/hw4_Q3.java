@@ -16,6 +16,7 @@ public class hw4_Q3 {
 		hw4_Q3_method hw4_Q3 = new hw4_Q3_method(EIGHT_PLANETS);
 		hw4_Q3_method Apple = new hw4_Q3_method("Apple");
 		
+//		System.out.println(Apple.getNumberOfVowelsCount());
 //		hw4_Q3.setStrArrIsNumberOfVowels(EIGHT_PLANETS);
 //		hw4_Q3.printNumberOfVowelsCount();
 		
