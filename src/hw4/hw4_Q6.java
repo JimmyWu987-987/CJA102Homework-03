@@ -43,7 +43,7 @@ public class hw4_Q6 {
 		
 //		NumOfHighestScores.setHighestScoresArrays(STUDENT_SCORES);
 //		NumOfHighestScores.setSelecthighestScoresStudet(STUDENT_SCORES);
-		NumOfHighestScores.printNumOfStudents();
+//		NumOfHighestScores.printNumOfStudents();
 		
 	}
 
