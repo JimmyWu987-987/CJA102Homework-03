@@ -39,6 +39,33 @@ public class hw4_Q6_method {
 		setSelecthighestScoresStudet(STUDENT_SCORES);
 		printNumOfStudents();
 	}
+	// 利用某次的考試最高分，尋找誰是考此分數的同學 的方法
+	public void setSelecthighestScoresStudet(int[][] STUDENT_SCORES) {
+		
+		// 找出所有考試中最高分的分數
+		// 儲存至 HighestScoresArrays()
+		setHighestScoresArrays(STUDENT_SCORES);
+		
+		// 掃描有幾位同學參加考試
+		setHowManyStudentsAreThere(STUDENT_SCORES);
+		
+		int[] tempHighestScoresArrays = this.highestScoresArrays;
+		int[] tempNumOfHighestScoresIsStudentCount = new int[this.numOfStudents];
+		
+		// 將考最高分的同學，做累加，將累加結果存放至 NumOfHighestScores[] 的方法
+		// 加入有同分同學的判斷
+		for (int i = 0; i < STUDENT_SCORES.length; i++) {
+			for (int j = 0; j < STUDENT_SCORES[i].length; j++) {
+				if (tempHighestScoresArrays[i] == STUDENT_SCORES[i][j]) {
+					tempNumOfHighestScoresIsStudentCount[j]++;
+				}
+			}
+		}
+		this.numOfHighestScoresIsStudentCount = tempNumOfHighestScoresIsStudentCount;
+	}
+	public int[] getSelecthighestScoresStudet() {
+		return this.numOfHighestScoresIsStudentCount;
+	}
 	
 	// 掃描某一次考試，做陣列排序，找出某次考試的最高分，索引值為 7 必定為最高分 的方法
 	// 此方法給 setSelecthighestScoresStudet() 使用
@@ -57,7 +84,6 @@ public class hw4_Q6_method {
 		}
 		highestScoresArrays = tempNumOfHighestScores;
 	}
-
 	public int[] getHighestScoresArrays() {
 		return this.highestScoresArrays;
 	}
@@ -71,38 +97,8 @@ public class hw4_Q6_method {
 		tempNumOfStudents = STUDENT_SCORES[0].length;
 		this.numOfStudents = tempNumOfStudents;
 	}
-
 	public int getHowManyStudentsAreThere() {
 		return this.numOfStudents;
-	}
-
-	// 利用某次的考試最高分，尋找誰是考此分數的同學 的方法
-	public void setSelecthighestScoresStudet(int[][] STUDENT_SCORES) {
-
-		// 找出所有考試中最高分的分數
-		// 儲存至 HighestScoresArrays()
-		setHighestScoresArrays(STUDENT_SCORES);
-
-		// 掃描有幾位同學參加考試
-		setHowManyStudentsAreThere(STUDENT_SCORES);
-
-		int[] tempHighestScoresArrays = this.highestScoresArrays;
-		int[] tempNumOfHighestScoresIsStudentCount = new int[this.numOfStudents];
-
-		// 將考最高分的同學，做累加，將累加結果存放至 NumOfHighestScores[] 的方法
-		// 加入有同分同學的判斷
-		for (int i = 0; i < STUDENT_SCORES.length; i++) {
-			for (int j = 0; j < STUDENT_SCORES[i].length; j++) {
-				if (tempHighestScoresArrays[i] == STUDENT_SCORES[i][j]) {
-					tempNumOfHighestScoresIsStudentCount[j]++;
-				}
-			}
-		}
-		this.numOfHighestScoresIsStudentCount = tempNumOfHighestScoresIsStudentCount;
-	}
-
-	public int[] getSelecthighestScoresStudet() {
-		return this.numOfHighestScoresIsStudentCount;
 	}
 
 	// 印出在所有考試中，所有同學考最高分的次數的 方法
