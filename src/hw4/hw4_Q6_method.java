@@ -35,9 +35,14 @@ public class hw4_Q6_method {
 	private int[] numOfHighestScoresIsStudentCount; // 存放所有同學每次考試考最高分的次數
 	private int numOfStudents; // 存放參加考試的同學人數
 
+	public hw4_Q6_method (int[][] STUDENT_SCORES) {
+		setSelecthighestScoresStudet(STUDENT_SCORES);
+		setSelecthighestScoresStudet(STUDENT_SCORES);
+	}
+	
 	// 掃描某一次考試，做陣列排序，找出某次考試的最高分，索引值為 7 必定為最高分 的方法
 	// 此方法給 setSelecthighestScoresStudet() 使用
-	void setHighestScoresArrays(int[][] STUDENT_SCORES) {
+	private void setHighestScoresArrays(int[][] STUDENT_SCORES) {
 
 		int[][] tempSTUDENT_SCORES = DeepCopyTwoDimArray.deepCopy(STUDENT_SCORES);
 		int[] tempNumOfHighestScores = new int[STUDENT_SCORES.length];

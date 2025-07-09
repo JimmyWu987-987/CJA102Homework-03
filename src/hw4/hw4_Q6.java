@@ -39,10 +39,10 @@ public class hw4_Q6 {
 	
 	public static void main(String[] args) {
 		// 計算某同學在是某次考試考最高分，為最高分則計算一次 的物件
-		hw4_Q6_method NumOfHighestScores = new hw4_Q6_method();
+		hw4_Q6_method NumOfHighestScores = new hw4_Q6_method(STUDENT_SCORES);
 		
-		NumOfHighestScores.setHighestScoresArrays(STUDENT_SCORES);
-		NumOfHighestScores.setSelecthighestScoresStudet(STUDENT_SCORES);
+//		NumOfHighestScores.setHighestScoresArrays(STUDENT_SCORES);
+//		NumOfHighestScores.setSelecthighestScoresStudet(STUDENT_SCORES);
 		NumOfHighestScores.printNumOfStudents();
 		
 	}
