@@ -21,7 +21,7 @@ public class hw4_Q5_method1 {
 	private int[] NumOfDaysInEachMonth; // 依大小月不同，存入對應值，例如：1月是DayOfTheMonth[0] = 31
 	private int CountOfDays; // 輸入日期為該年度的第幾天
 
-	ScannerObject sc = new ScannerObject();
+	private ScannerObject sc = new ScannerObject();
 
 	public hw4_Q5_method1() {
 		int tempYear = 0;
