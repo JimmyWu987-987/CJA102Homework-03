@@ -6,9 +6,6 @@ public class HW5_Q2 {
 
 	private static final int TAKE_NUM = 10;
 	private static final int NUM_RANGE = 100;
-	static {
-		System.out.println("隨機顯示 " + TAKE_NUM + " 個 " + "0~" + NUM_RANGE + "(含" + NUM_RANGE + ")範圍的整數，並算出平均值。");
-	}
 
 	public static void main(String[] args) {
 
@@ -25,6 +22,7 @@ class randAbg implements Display {
 	private int saveRandomNumAvg;
 
 	public randAbg(int TAKE_NUM, int NUM_RANGE) {
+		System.out.println("隨機顯示 " + TAKE_NUM + " 個 " + "0~" + NUM_RANGE + "(含" + NUM_RANGE + ")範圍的整數，並算出平均值。");
 		setSaveRandomNumAndAvg(TAKE_NUM, NUM_RANGE);
 	}
 

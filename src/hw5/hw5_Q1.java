@@ -7,10 +7,6 @@ import hw3.ScannerObject;
 
 public class HW5_Q1 {
 
-	static {
-		System.out.println("請輸入寬與高：");
-	}
-
 	public static void main(String[] args) {
 		starSquare ss = new starSquare();
 	}
@@ -23,7 +19,7 @@ class starSquare implements Display {
 	ScannerObject sc = new ScannerObject();
 
 	public starSquare() {
-
+		System.out.println("請輸入寬與高：");
 		setWidth();
 		setHeight();
 		getStarSquare(getWidth(), getHeight());
