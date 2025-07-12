@@ -1,4 +1,6 @@
-.DC_store
+# 忽略所有 .DS_Store 檔案
+**/.DS_Store
+.DS_Store
 .classpath
 .project
 .settings/
