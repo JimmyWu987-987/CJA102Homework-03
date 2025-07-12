@@ -5,7 +5,7 @@ package hw5;
 
 import hw3.ScannerObject;
 
-public class HW5_Q1 {
+public class hw5_Q1 {
 
 	public static void main(String[] args) {
 		starSquare ss = new starSquare();

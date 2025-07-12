@@ -12,6 +12,6 @@ public MyRectangle(): 不帶參數也無內容的建構子
 public MyRectangle(double width, double depth): 傳入的兩個引數會指定給對應的屬性
 
 */
-public class HW5_Q4 {
+public class hw5_Q4 {
 
 }

@@ -2,7 +2,7 @@ package hw5;
 
 //請設計一個方法為randAvg()，從10個 0～100(含100)的整數亂數中取平均值並印出這10個亂數與平均值，如圖：
 
-public class HW5_Q2 {
+public class hw5_Q2 {
 
 	private static final int TAKE_NUM = 10;
 	private static final int NUM_RANGE = 100;
