@@ -8,17 +8,17 @@ import hw3.ScannerObject;
 public class hw5_Q1 {
 
 	public static void main(String[] args) {
-		starSquare ss = new starSquare();
+		StarSquare ss = new StarSquare();
 	}
 
 }
 
-class starSquare implements Display {
+class StarSquare implements Display {
 	private int width;
 	private int height;
 	ScannerObject sc = new ScannerObject();
 
-	public starSquare() {
+	public StarSquare() {
 		System.out.println("請輸入寬與高：");
 		setWidth();
 		setHeight();

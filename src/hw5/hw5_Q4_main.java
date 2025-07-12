@@ -7,5 +7,8 @@ package hw5;
 */
 
 public class hw5_Q4_main {
+	public static void main(String[] args) {
+		
+	}
 
 }

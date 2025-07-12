@@ -9,19 +9,19 @@ public class hw5_Q2 {
 
 	public static void main(String[] args) {
 
-		randAbg randAbg = new randAbg(TAKE_NUM, NUM_RANGE);
+		RandAvg randAbg = new RandAvg(TAKE_NUM, NUM_RANGE);
 		randAbg.display();
 
 	}
 
 }
 
-class randAbg implements Display {
+class RandAvg implements Display {
 
 	private int[] saveRandomNum;
 	private int saveRandomNumAvg;
 
-	public randAbg(int TAKE_NUM, int NUM_RANGE) {
+	public RandAvg(int TAKE_NUM, int NUM_RANGE) {
 		System.out.println("隨機顯示 " + TAKE_NUM + " 個 " + "0~" + NUM_RANGE + "(含" + NUM_RANGE + ")範圍的整數，並算出平均值。");
 		setSaveRandomNumAndAvg(TAKE_NUM, NUM_RANGE);
 	}
