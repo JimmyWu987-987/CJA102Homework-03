@@ -12,29 +12,28 @@ public class HW5_Q1 {
 	}
 
 	public static void main(String[] args) {
-//		starSquare ss = new starSquare();
+		starSquare ss = new starSquare();
 	}
 
 }
 
-class starSquare {
+class starSquare implements Display {
 	private int width;
 	private int height;
 	ScannerObject sc = new ScannerObject();
-	
-	public starSquare(){
-		
+
+	public starSquare() {
+
 		setWidth();
 		setHeight();
-		getStarSquare(getWidth(),getHeight());
-			
-			
+		getStarSquare(getWidth(), getHeight());
+
 	}
 
 	public void getStarSquare(int width, int height) {
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
-				System.out.print("*");
+				display();
 			}
 			System.out.println();
 		}
@@ -54,5 +53,9 @@ class starSquare {
 
 	public int getHeight() {
 		return this.height;
+	}
+
+	public void display() {
+		System.out.print("*");
 	}
 }

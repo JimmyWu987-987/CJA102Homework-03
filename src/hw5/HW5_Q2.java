@@ -12,18 +12,21 @@ public class HW5_Q2 {
 
 	public static void main(String[] args) {
 
-		randAbg randAbg = new randAbg();
-
-		randAbg.setSaveRandomNumAndAvg(TAKE_NUM, NUM_RANGE);
+		randAbg randAbg = new randAbg(TAKE_NUM, NUM_RANGE);
+		randAbg.display();
 
 	}
 
 }
 
-class randAbg {
+class randAbg implements Display {
 
 	private int[] saveRandomNum;
 	private int saveRandomNumAvg;
+
+	public randAbg(int TAKE_NUM, int NUM_RANGE) {
+		setSaveRandomNumAndAvg(TAKE_NUM, NUM_RANGE);
+	}
 
 	public void setSaveRandomNumAndAvg(int TAKE_NUM, int NUM_RANGE) {
 		int[] tempSaveRandomNum = new int[TAKE_NUM];
@@ -33,18 +36,25 @@ class randAbg {
 			tempSaveRandomNum[i] = (int) (Math.random() * (NUM_RANGE + 1));
 			tempSaveRandomNumAvg += tempSaveRandomNum[i];
 		}
-		
+
 		saveRandomNum = tempSaveRandomNum;
-		
-		saveRandomNumAvg = tempSaveRandomNumAvg/tempSaveRandomNum.length;
+
+		saveRandomNumAvg = tempSaveRandomNumAvg / tempSaveRandomNum.length;
 	}
 
 	public int[] getRandomNumSave() {
 		return this.saveRandomNum;
 	}
-	
+
 	public int getSaveRandomNumAvg() {
 		return this.saveRandomNumAvg;
 	}
 
+	public void display() {
+		for (int i = 0; i < getRandomNumSave().length; i++) {
+			System.out.print(getRandomNumSave()[i] + ", ");
+		}
+		System.out.println();
+		System.out.println("平均值是：" + getSaveRandomNumAvg());
+	}
 }
