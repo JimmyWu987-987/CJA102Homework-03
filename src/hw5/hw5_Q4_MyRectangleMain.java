@@ -6,9 +6,7 @@ package hw5;
 (2) 使用public MyRectangle(double width, double depth)建構子建立物件，設定width, depth為10, 20，透過getArea()印出結果
 */
 
-public class hw5_Q4_main {
-	public static void main(String[] args) {
-		
-	}
+
+public class hw5_Q4_MyRectangleMain {
 
 }
