@@ -13,6 +13,48 @@ public MyRectangle(double width, double depth): 傳入的兩個引數會指定�
 
 */
 
-public class hw5_Q4_MyRectangle {
+public class hw5_Q4_MyRectangle implements Display{
 
+	private double width;
+	private double depth;
+	private double area;
+
+	public hw5_Q4_MyRectangle() {
+
+	}
+
+	public hw5_Q4_MyRectangle(double width, double depth) {
+		setWidth(width);
+		setDepth(depth);
+		setArea();
+
+	}
+
+	public void setArea() {
+		this.area = getWidth() * getDepth();
+	}
+
+	public double getArea() {
+		return this.area;
+	}
+
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	public double getWidth() {
+		return this.width;
+	}
+
+	public void setDepth(double depth) {
+		this.depth = depth;
+	}
+
+	public double getDepth() {
+		return this.depth;
+	}
+
+	public void display() {
+		System.out.println("長方形的面積為：" + this.area);
+	}
 }
