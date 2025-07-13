@@ -13,6 +13,7 @@ public class hw5_Q5 {
 	public static void main(String[] args) {
 		GenAuthCode g1 =new GenAuthCode(RAND_ARR_LENGTH);
 		g1.display();
+		
 	
 	}
 
