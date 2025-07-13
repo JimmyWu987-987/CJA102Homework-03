@@ -1,6 +1,6 @@
 package hw5;
 
-public class GenAuthCode {
+public class GenAuthCode implements Display{
 
 	// 宣告 int[] randResultArray 作爲存放亂數結果的陣列
 	private int[] randResultArray;
@@ -22,10 +22,7 @@ public class GenAuthCode {
 	// 數字、大寫英文、小寫英文取亂數 的方法
 	// 用Math.Random()取亂數
 	// Unicode的編碼，用整數找出相對應的字元
-
-	
-
-	public void setGenAuthCode(int RAND_ARR_LENGTH) {
+	private final void setGenAuthCode(int RAND_ARR_LENGTH) {
 
 		int[] temprandResultArray = new int[RAND_ARR_LENGTH];
 		// 準備兩組Math.Random()
