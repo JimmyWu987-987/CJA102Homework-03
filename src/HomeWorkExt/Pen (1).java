@@ -9,8 +9,7 @@ public class Pen {
 	}
 
 	public Pen(String brand, int price) {
-		setBrand(brand);
-		setPrice(price);
+		
 	}
 	
 	public void setBrand(String brand) {
@@ -21,14 +20,15 @@ public class Pen {
 		return this.brand;
 	}
 	
-	public void setPrice(int price) {
+	public void setprice(int price) {
 		this.price = price;
 	}
-	public int getPrice() {
+	public int getprice() {
 		return this.price;
 	}
 	
 	public void write() {
 		System.out.println("寫字");
 	}
+	
 }
