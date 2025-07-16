@@ -8,9 +8,11 @@ public class RoleGameTest {
 		
 		saber.attack();
 		saber.move();
+		saber.defend();
 		
 		archer.attack();
 		archer.move();
+		archer.defend();
 	}
 
 }
