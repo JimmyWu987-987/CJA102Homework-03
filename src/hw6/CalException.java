@@ -13,22 +13,17 @@ package hw6;
 public class CalException extends Exception {
 	public CalException() {
 	}
-	
+
 	public CalException(String message) {
 		super(message);
 	}
-	
-	public void checkException(double input) throws CalException {
-		if (input == 0) {
-			throw new CalException("輸入的值不能為0，請重新輸入。");
+
+	public boolean checkException(int x, int y) throws CalException {
+		if (x == 0 && y == 0) {
+			throw new CalException(x + " 的 " + y + " 次方跟你的人生一樣毫無意義，請重新輸入。");
+		} else if (y < 0) {
+			throw new CalException("輸入的值不能為負數，請重新輸入。");
 		}
-		if (input < 0 ) {
-			throw new CalException("輸入的值不能為複數，請重新輸入。");
-		}
-	}
-	public void checkException(String input) throws CalException{
-		if (input instanceof String) {
-			throw new CalException("輸入的值不能為文字，請重新輸入。");
-		}
+		return true;
 	}
 }

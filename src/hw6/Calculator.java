@@ -14,70 +14,77 @@ import java.util.Scanner;
 
 public class Calculator {
 
-	private double powerResult;
-	private double x;
-	private double y;
+	private int powerResult;
+	private int x;
+	private int y;
 	private Scanner sc = new Scanner(System.in);
-	private CalException check = new CalException();
+	private CalException Calculator = new CalException();
 
 	public Calculator() {
 
+		boolean checkOut = false;
 		do {
+			
 			try {
 				setX();
 				setY();
+				checkOut = Calculator.checkException(getX(), getY());
+
 			} catch (CalException e) {
 //				e.printStackTrace();
 				System.out.println(e.getMessage());
 			}
-
-		} while (getX() <= 0 || getY() <= 0);
+		} while (!checkOut);
 
 		this.sc.close();
 		setPower();
 	}
 
 	public void setX() throws CalException {
-		double tempX;
-
+		int tempX;
 		System.out.println("請輸入Ｘ值：");
-		tempX = this.sc.nextInt();
-		
-		check.checkException(tempX);
 
-		this.x = tempX;
-		sc.nextLine();
+		if (sc.hasNextInt()) {
+			tempX = this.sc.nextInt();
+			sc.nextLine();
+			this.x = tempX;
+		} else {
+			sc.nextLine();
+			throw new CalException("輸入的值不能為文字或小數，請重新輸入。");
+		}
+
 	}
 
-	public double getX() {
+	public int getX() {
 		return this.x;
 	}
 
-	public void setY() throws CalException{
-		double tempY;
-
+	public void setY() throws CalException {
+		int tempY;
 		System.out.println("請輸入Ｙ值：");
-		tempY = this.sc.nextInt();
-
-		check.checkException(tempY);
-		
-		this.y = tempY;
-		sc.nextLine();
+		if (sc.hasNextInt()) {
+			tempY = this.sc.nextInt();
+			sc.nextLine();
+			this.y = tempY;
+		} else {
+			sc.nextLine();
+			throw new CalException("輸入的值不能為文字或小數，請重新輸入。");
+		}
 	}
 
-	public double getY() {
+	public int getY() {
 		return this.y;
 	}
 
 	public void setPower() {
-		this.powerResult = Math.pow(getX(), getY());
+		this.powerResult = (int) Math.pow(getX(), getY());
 	}
 
-	public double getPower() {
+	public int getPower() {
 		return this.powerResult;
 	}
 
 	public void resultPrint() {
-
+		System.out.println(this.getX() + " 的 " + this.getY() + " 次方等於 " + this.getPower());
 	}
 }
