@@ -10,6 +10,6 @@ package hw6;
 
 */
 
-public class Hw6 {
+public class CalTest {
 
 }
