@@ -9,6 +9,6 @@ package hw7;
 
  * */
 
-public class HwQ4 {
+public class Hw7Q4 {
 
 }
