@@ -17,27 +17,30 @@ public class Calculator {
 	private int powerResult;
 	private int x;
 	private int y;
-	private Scanner sc = new Scanner(System.in);
-	private CalException Calculator = new CalException();
+	private static final Scanner sc = new Scanner(System.in);
+	private CalException checkerException = new CalException();
 
 	public Calculator() {
+		this.x = 0;
+		this.y = 0;
+		this.powerResult = 0;
+	}
+
+	public void getInputsAndValidate() {
 
 		boolean checkOut = false;
 		do {
-			
+
 			try {
 				setX();
 				setY();
-				checkOut = Calculator.checkException(getX(), getY());
+				checkOut = checkerException.checkException(getX(), getY());
 
 			} catch (CalException e) {
 //				e.printStackTrace();
-				System.out.println(e.getMessage());
+				System.err.println(e.getMessage());
 			}
 		} while (!checkOut);
-
-		this.sc.close();
-		setPower();
 	}
 
 	public void setX() throws CalException {
@@ -86,5 +89,11 @@ public class Calculator {
 
 	public void resultPrint() {
 		System.out.println(this.getX() + " 的 " + this.getY() + " 次方等於 " + this.getPower());
+	}
+
+	public void closeScanner() {
+		if (sc != null) {
+			sc.close();
+		}
 	}
 }

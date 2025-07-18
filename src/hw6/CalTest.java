@@ -14,9 +14,13 @@ public class CalTest {
 
 	public static void main(String[] args) {
 		Calculator c1 = new Calculator();
-
-		c1.resultPrint();
-
+		try {
+			c1.getInputsAndValidate();
+			c1.setPower();
+			c1.resultPrint();
+			
+		}finally{
+			c1.closeScanner();
+		}
 	}
-
 }
