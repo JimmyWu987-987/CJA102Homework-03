@@ -1,0 +1,22 @@
+137,第 1 次 append 覆寫
+5,第 2 次 append 覆寫
+882,第 3 次 append 覆寫
+368,第 4 次 append 覆寫
+362,第 5 次 append 覆寫
+479,第 6 次 append 覆寫
+358,第 7 次 append 覆寫
+32,第 8 次 append 覆寫
+758,第 9 次 append 覆寫
+141,第 10 次 append 覆寫
+
+976,第 1 次 append 覆寫
+523,第 2 次 append 覆寫
+383,第 3 次 append 覆寫
+275,第 4 次 append 覆寫
+907,第 5 次 append 覆寫
+878,第 6 次 append 覆寫
+28,第 7 次 append 覆寫
+859,第 8 次 append 覆寫
+504,第 9 次 append 覆寫
+198,第 10 次 append 覆寫
+
