@@ -8,4 +8,9 @@ append功能讓每次執行結果都能被保存起來)
 
 public class Hw7Q2 {
 
+	public static final String FILE_PATH = "/Users/workjimmy/CJA102_workspace/Java_WorkSpace/Homework-03/src/hw7/Data.txt";
+
+	public static void main(String[] args) {
+		
+	}
 }

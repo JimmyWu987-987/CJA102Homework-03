@@ -12,7 +12,7 @@ Sample.txt檔案共有xxx個位元組，yyy個字元，zzz列資料
 
 public class Hw7Q1 {
 
-	public static final String FILE_PATH = "/Users/workjimmy/CJA102_workspace/Java_WorkSpace/Homework-03/src/hw7/Sample.txt";
+	public static final String FILE_PATH = "./src/hw7/Sample.txt";
 
 	public static void main(String[] args) {
 		File sampleTxt = new File(FILE_PATH);
