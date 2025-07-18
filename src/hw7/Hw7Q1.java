@@ -23,13 +23,13 @@ public class Hw7Q1 {
 		try {
 
 			countChar = fileBuffReaderCountChar(FILE_PATH);
-			countStr =fileBuffReaderCountStr(FILE_PATH);
+			countStr = fileBuffReaderCountStr(FILE_PATH);
 
 		} catch (IOException e) {
 
 		}
-		System.out
-				.println(" Sample.txt檔案共有 " + sampleTxt.length() + " 個位元組, " + countChar + " 個字元， " + countStr + " 列資料");
+		System.out.println(
+				" Sample.txt檔案共有 " + sampleTxt.length() + " 個位元組, " + countChar + " 個字元， " + countStr + " 列資料");
 
 	}
 
@@ -59,7 +59,7 @@ public class Hw7Q1 {
 		}
 		br2.close();
 		fr2.close();
-		
+
 		return countStr;
 	}
 
