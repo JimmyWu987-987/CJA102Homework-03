@@ -29,7 +29,7 @@ public class Hw7Q1 {
 
 		}
 		System.out.println(
-				" Sample.txt檔案共有 " + sampleTxt.length() + " 個位元組, " + countChar + " 個字元， " + countStr + " 列資料");
+				"Sample.txt檔案共有 " + sampleTxt.length() + " 個位元組, " + countChar + " 個字元， " + countStr + " 列資料");
 
 	}
 
