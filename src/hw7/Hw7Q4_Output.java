@@ -33,26 +33,26 @@ public class Hw7Q4_Output {
 			System.out.println("Not a directory and make a directory.");
 			dir.mkdir();
 		}
-
-		Cat[] cat = new Cat[2];
-		Dog[] dog = new Dog[2];
-		dog[0] = new Dog("dog1");
-		dog[1] = new Dog("dog2");
-		cat[0] = new Cat("cat1");
-		cat[1] = new Cat("cat2");
+		Speak[] speak = new Speak[4];
+		
+		speak[0] = new Dog("dog1");
+		speak[1] = new Dog("dog2");
+		speak[2] = new Cat("cat1");
+		speak[3] = new Cat("cat2");
 
 		// 輸出
 		try {
 			FileOutputStream fos = new FileOutputStream(file);
 			BufferedOutputStream bos = new BufferedOutputStream(fos);
 			ObjectOutputStream oos = new ObjectOutputStream(bos);
+			
+			for (int i = 0; i < speak.length; i++) {
+				oos.writeObject(speak[i]);
+			}
+		
 
-			for (int i = 0; i < dog.length; i++) {
-				oos.writeObject(dog[i]);
-			}
-			for (int i = 0; i < cat.length; i++) {
-				oos.writeObject(cat[i]);
-			}
+			oos.flush();
+			
 			oos.close();
 			bos.close();
 			fos.close();
