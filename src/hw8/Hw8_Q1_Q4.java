@@ -28,12 +28,15 @@ public class Hw8_Q1_Q4 {
 
 	public static void main(String[] args) {
 		GetElements ge = new GetElements(LIST);
+		// 印出這個物件裡的所有元素(使用Iterator, 傳統for與foreach)
 		ge.printIterator();
 		ge.printFor();
 		ge.printForEach();
 
 		System.out.println("-------------------");
+		// 移除不是java.lang.Number相關的物件
 		numOnlyElement noe = new numOnlyElement(LIST);
+		// 再次印出這個集合物件的所有元素，觀察是否已將非Number相關的物件移除成功
 		noe.print();
 		
 	}
