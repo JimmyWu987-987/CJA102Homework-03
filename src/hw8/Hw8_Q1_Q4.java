@@ -119,8 +119,7 @@ public class Hw8_Q1_Q4 {
 		}
 
 		public void setNumOnlyElement(List<Object> inputList) {
-			int i = 0;
-			Iterator it = inputList.iterator();
+			Iterator<Object> it = inputList.iterator();
 			
 			while (it.hasNext()) {
 				try {
