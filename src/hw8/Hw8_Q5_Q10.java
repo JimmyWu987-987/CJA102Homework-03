@@ -52,7 +52,7 @@ public class Hw8_Q5_Q10 {
 		printTreeSetTrain.print();
 
 	}
-	
+
 //	• 請寫一隻程式，能印出不重複的Train物件
 	static class NotRepeatedElement {
 
@@ -61,17 +61,17 @@ public class Hw8_Q5_Q10 {
 		public NotRepeatedElement() {
 
 		}
-		
+
 		public NotRepeatedElement(List<Train> trainList) {
 			setNotRepeatedElement(trainList);
 		}
-		
+
 		void setNotRepeatedElement(List<Train> trainList) {
 			Set<Train> temp = new HashSet<Train>(trainList);
 			this.notRepeatedData = temp;
 		}
-		
-		public Set<Train> getNotRepeatedElement(){
+
+		public Set<Train> getNotRepeatedElement() {
 			return this.notRepeatedData;
 		}
 
@@ -91,17 +91,17 @@ public class Hw8_Q5_Q10 {
 		public SortTrainList() {
 
 		}
-		
-		public SortTrainList(List<Train> trainList) {	
+
+		public SortTrainList(List<Train> trainList) {
 			setCopySortTrainList(trainList);
 			setSortTrainList();
 		}
-		
+
 		void setCopySortTrainList(List<Train> trainList) {
 			List<Train> temp = new ArrayList<Train>(trainList);
 			this.sortTrainList = temp;
 		}
-		
+
 		void setSortTrainList() {
 			Collections.sort(sortTrainList);
 			Collections.reverse(sortTrainList);
@@ -121,21 +121,26 @@ public class Hw8_Q5_Q10 {
 
 		public TreeSetTrain() {
 		}
-		
+
 		public TreeSetTrain(List<Train> trainList) {
 			setSortTrain(trainList);
 		}
 
 		void setSortTrain(List<Train> trainList) {
 			
-			//使用 Comparator.comparing() 搭配 reversed() (Java 8+，更簡潔)
-			// (1) 直接使用 Comparator 初始化 TreeSet
-            // 這會確保從一開始就按照「班次由大到小」的順序來儲存元素
-			
-			this.treeSetTrain = new TreeSet<>(Comparator.comparing(Train::getNumber).reversed());
-			
-			// (2) 將 trainList 中的所有元素加入到這個已經設定好降序的 TreeSet 中
+			TreeSetComparator tsc = new TreeSetComparator();
+			this.treeSetTrain = new TreeSet<>(tsc);
 			this.treeSetTrain.addAll(trainList);
+			
+			
+//			// 使用 Comparator.comparing() 搭配 reversed() (Java 8+，更簡潔)
+//			// (1) 直接使用 Comparator 初始化 TreeSet
+//			// 這會確保從一開始就按照「班次由大到小」的順序來儲存元素
+//
+//			this.treeSetTrain = new TreeSet<>(Comparator.comparing(Train::getNumber).reversed());
+//
+//			// (2) 將 trainList 中的所有元素加入到這個已經設定好降序的 TreeSet 中
+//			this.treeSetTrain.addAll(trainList);
 		}
 
 		public Set<Train> getSortTrain() {
@@ -150,8 +155,16 @@ public class Hw8_Q5_Q10 {
 		}
 	}
 
+	static class TreeSetComparator implements Comparator<Train> {
 
-	//	各種排序的方法
+		@Override
+		public int compare(Train o1, Train o2) {
+			return o1.compareTo(o2) * -1;
+		}
+
+	}
+
+	// 各種排序的方法
 	static class GetElements {
 
 		Iterator<Train> it;
@@ -165,7 +178,7 @@ public class Hw8_Q5_Q10 {
 			setIterator(trainlist);
 			setForEach(trainlist);
 		}
-		
+
 		public GetElements(List<Train> trainlist) {
 			setFor(trainlist);
 		}
