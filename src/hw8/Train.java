@@ -18,7 +18,7 @@ import java.util.Objects;
 
 */
 
-public class Train {
+public class Train implements Comparable<Train> {
 
 	private int number;
 	private String type;
@@ -28,8 +28,8 @@ public class Train {
 
 	public Train() {
 	};
-	
-	public Train(int number,String type,String start,String dest,double price) {
+
+	public Train(int number, String type, String start, String dest, double price) {
 		setNumber(number);
 		setType(type);
 		setStart(start);
@@ -40,39 +40,40 @@ public class Train {
 	public void setNumber(int number) {
 		this.number = number;
 	}
+
 	public int getNumber() {
 		return number;
 	}
-	
+
 	public void setType(String type) {
-		this.type=type;
+		this.type = type;
 	}
-	
+
 	public String getType() {
 		return this.type;
 	}
-	
-	public void  setStart(String start) {
+
+	public void setStart(String start) {
 		this.start = start;
 	}
-	
+
 	public String getStart() {
 		return this.start;
 	}
-	
+
 	public void setDest(String dest) {
-		this.dest= dest;
+		this.dest = dest;
 	}
-	
+
 	public String getDest() {
 		return dest;
 	}
-	
-	public void setPrice (double price) {
+
+	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	public double getPrice () {
+
+	public double getPrice() {
 		return price;
 	}
 
@@ -91,7 +92,16 @@ public class Train {
 			return false;
 		Train other = (Train) obj;
 		return number == other.number && Objects.equals(type, other.type);
-	} 
-	
-	
+	}
+
+	@Override
+	public int compareTo(Train o) {
+		if (this.number > o.number)
+			return 1;
+		else if(this.number == o.number)
+			return 0;
+		else
+			return -1;
+	}
+
 }

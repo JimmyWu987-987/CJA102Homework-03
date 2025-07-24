@@ -138,7 +138,6 @@ public class Hw8_Q1_Q4 {
 
 		// 再次印出這個集合物件的所有元素，觀察是否已將非Number相關的物件移除成功
 		public void print() {
-			System.out.println("已經移除集合內的非Number物件");
 			System.out.println("------以下為集合內Number物件------");
 			for (int i = 0; i < numOnlyData.size(); i++) {
 				System.out.println(numOnlyData.get(i));
