@@ -154,7 +154,8 @@ public class Hw8_Q5_Q10 {
 			ge.printIterator();
 		}
 	}
-
+	
+	// 給 TreeSetTrain 的比較器，做降冪排序。
 	static class TreeSetComparator implements Comparator<Train> {
 
 		@Override
