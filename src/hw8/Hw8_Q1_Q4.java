@@ -53,6 +53,7 @@ public class Hw8_Q1_Q4 {
 
 		public GetElements(List<Object> list) {
 			setIterator(list);
+	
 			setFor(list);
 			setForEach(list);
 		}
