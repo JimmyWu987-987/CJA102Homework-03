@@ -165,7 +165,7 @@ public class Hw8_Q5_Q10 {
 
 	}
 
-	// 各種排序的方法
+	// 三種print集合元素的方法
 	static class GetElements {
 
 		Iterator<Train> it;
